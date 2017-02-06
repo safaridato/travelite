@@ -232,8 +232,6 @@
 				  $('#travel_wrapper').addClass('travel_body_loaded'); 
 			    }, 100);
 			   //@TODO set timeouts as client wish
-
-		
 			} else{
 			    setTimeout(function(){
 				  $('#travel_wrapper').addClass('travel_body_loaded'); 
