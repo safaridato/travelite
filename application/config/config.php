@@ -76,7 +76,21 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'russian';
+
+
+/* default language abbreviation */
+$config['language_abbr'] = "en";
+
+/* set available language abbreviations */
+$config['lang_uri_abbr']   = array( "en"  => "english", "de" => "german", "ru" => "russian");
+$config['lang_abbr_trans'] = array( "en" => "English", "de" => "German",  "ru" => "Русский");
+$config['lang_abbr_id']    = array("en" => 1, "de" => 2, "ru" => 3);
+$config['lang_id']         = 1;
+$config['change_language_action'] = 0;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
