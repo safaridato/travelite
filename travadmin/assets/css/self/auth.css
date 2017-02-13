@@ -1,0 +1,22 @@
+/*css stylesheet*/
+
+.login-logo .logo{
+    width: 200px;
+    margin: auto;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+.login-logo .logo img{
+    height: 100%;
+}
+.auth-form{
+    width: 600px;
+    padding-top: 10px;
+    margin: auto;
+}
+.auth-form p{
+    text-align: center;
+}

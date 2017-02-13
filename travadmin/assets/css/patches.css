@@ -1,0 +1,16 @@
+.input-icon input, .input-icon textarea {
+    padding-left: 36px;
+
+}
+.input-icon i{
+    font-size: 13px !important;
+}
+
+
+.sub-categories-list{
+    float: left;
+    margin-left: 20px;
+}
+.catgories-list{
+    float: left;
+}

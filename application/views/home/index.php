@@ -392,11 +392,11 @@
             <div class="container">
                 <div class="row">
                     <div class="video_popup">
-                        <a class="popup_video_swm" href="https://www.vimeo.com/45830194">
+                        <a class="popup_video_swm" href="https://www.youtube.com/watch?v=1SdKrqubodw">
                             <i class="fa fa-play-circle"></i>
                         </a>
 
-                        <h3 class="video_text">Watch Our Tourist Experience</h3>
+                        <h3 class="video_text"><?php echo lang('tpl_video_title'); ?></h3>
                     </div>
                 </div>
             </div>
@@ -405,6 +405,7 @@
     <!-- video section End -->
 
     <!-- testimonials section start -->
+    <?php /*
     <div class="full_width testimonials_section_home">
         <div class="container">
             <div class="row">
@@ -483,6 +484,7 @@
         </div>
     </div>
     <!-- subscribe section End -->
+ */?>
 </div>
 
 

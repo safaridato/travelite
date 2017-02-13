@@ -14,6 +14,7 @@ Version: 1.0.0
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8"/>
+    <meta name="robots" content="nofollow" />
     <title>Travelite - Tours and Travels Online Booking HTML</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="description" content="Travelite - Tours and Travels Online Booking HTML"/>

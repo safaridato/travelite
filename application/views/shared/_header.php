@@ -9,7 +9,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="top_menu">
                         <ul>
-                            <li><a href=""><i class="fa fa-globe"></i> Languages</a>
+                            <li><a ><i class="fa fa-globe"></i> Languages</a>
                                 <ul class="sub-menu">
                                     <li><a href="<?php echo base_url();?>en/<?php echo uri_string();?>">English</a></li>
                                     <li><a href="<?php echo base_url();?>ru/<?php echo uri_string();?>">Русский</a></li>
@@ -110,8 +110,8 @@
                 <div class="col-md-10 col-sm-10"> <a href="javascript:;" class="menu-toggle"></a>
                     <div class="main_menu">
                         <ul>
-                            <li class="active"><a href=""><?php echo lang('tpl_home'); ?></a></li>
-                            <li><a href="Tour_Home.html">tours</a>
+                            <li class="active"><a href="<?php echo base_url();?>"><?php echo lang('tpl_home'); ?></a></li>
+                            <li><a href="<?php echo base_url();?>tours"><?php echo lang('tpl_tours'); ?></a>
                                 <ul class="sub-menu">
                                     <li><a href="Tour_destination.html">Destination</a>
                                         <ul class="sub-menu">
@@ -132,7 +132,7 @@
                                 </ul>
                             </li>
                             <li><a href="">special offers</a></li>
-                            <li><a href="Contact.html">contact</a></li>
+                            <li><a href="<?php echo base_url();?>contact">contact</a></li>
                         </ul>
                     </div>
                 </div>

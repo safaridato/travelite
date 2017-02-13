@@ -2275,7 +2275,7 @@ width: 100%;
 
 /*-----video css start-----*/
 .home_video_section{
-	background:url('http://placehold.it/1600x595') no-repeat;
+	background:url('../images/video-overlay.png') no-repeat;
 	background-size:cover;
 }
 
