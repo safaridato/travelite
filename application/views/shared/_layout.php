@@ -5,11 +5,11 @@ Template Name: Travelite - Tours and Travels Online Booking HTML
 Version: 1.0.0
 -->
 <!--[if IE 8]>
-<html lang="en" class="ie8 no-js"> <![endif]-->
+<html lang="en" class="ie8 no-js" ng-app="travelApp"> <![endif]-->
 <!--[if IE 9]>
-<html lang="en" class="ie9 no-js"> <![endif]-->
+<html lang="en" class="ie9 no-js" ng-app="travelApp"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="en" ng-app="travelApp">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
@@ -23,12 +23,17 @@ Version: 1.0.0
     <meta name="MobileOptimized" content="320">
     <!--srart theme style -->
     <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url(); ?>assets/css/style-fixes.css" rel="stylesheet" type="text/css"/>
     <!-- end theme style -->
     <!-- favicon links -->
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <base href="<?php echo angular_base();?>">
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ng/angular.1.6.1.js"></script>
 </head>
 <body class="travel_home">
+
 <!--Page loading start-->
 <?php //$this->load->view("shared/_loader");?>
 <!--Page loading end-->
@@ -52,7 +57,8 @@ Version: 1.0.0
 </div>
 <!--Page main section end-->
 <!--main js file start-->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.11.3.js"></script>
+
+
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap-select.js"></script>
 <script type="text/javascript"
@@ -111,6 +117,10 @@ Version: 1.0.0
 <!-- pricefilter-->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 <!--main js file end-->
+
+
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ng/ap.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ng/tours.js"></script>
 </body>
 </html>
  
