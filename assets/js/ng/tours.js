@@ -11,7 +11,7 @@
             //
             $scope.GetToursList = function () {
                 var fd = new FormData();
-                $scope.formFields.loadProfile = true;
+                $scope.formFields.loadForm = true;
                 fd.append("FirstName", $scope.formFields.FirstName);
                 $http({
                     method: "POST",
@@ -20,7 +20,7 @@
                     headers: {"Content-Type": undefined}
                 }).then(function successCallback(response) {
 
-                    $scope.formFields.loadProfile = false;
+                    $scope.formFields.loadForm = false;
                     $scope.toursList = response.data.Data;
                 }, function errorCallback(response) {
 
@@ -28,6 +28,49 @@
             }
 
             $scope.GetToursList();
+
+
+        })
+        .controller('TourDetailsController', function ($scope, $locale, $http) {
+            $scope.tourDetails = {};
+
+            $scope.formFields = {};
+            $scope.GetTourDetails = function () {
+                var fd = new FormData();
+                //$scope.formFields.loadForm = true;
+                fd.append("TourId", '1');
+                $http({
+                    method: "POST",
+                    url: "services/tourssvc/GetTourDetails/",
+                    data: fd,
+                    headers: {"Content-Type": undefined}
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    // $scope.formFields.loadForm = false;
+                    $scope.tourDetails = response.data.Data;
+                }, function errorCallback(response) {
+
+                });
+            }
+
+            $scope.GetTourDetails();
+
+            setTimeout(function () {
+                $("#package_details_slider").owlCarousel({
+                    items: 1,
+                    nav: true,
+                    auto: true,
+                    dots: false,
+                    navText: ['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>'],
+                    paginationSpeed: 1500,
+                    slideSpeed: 3000,
+                    smartSpeed: 1000,
+                    singleItem: true,
+                    transitionStyle: "fade",
+                });
+
+
+            }, 2000);
 
         });
 })();

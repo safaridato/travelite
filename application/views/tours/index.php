@@ -191,7 +191,8 @@
                         <div class="sorting_places_wrap  list_sorting_view" ng-repeat="tour in toursList">
                             <div class="col-lg-5 col-md-5 col-sm-5 padding_none">
                                 <div class="thumb_wrape">
-                                    <img src="http://placehold.it/297x225" class="img-responsive" alt="list thumb">
+<!--                                    <img src="http://placehold.it/297x225" class="img-responsive" alt="list thumb">-->
+                                    <img ng-src="{{tour.details.ThumbImage}}" class="img-responsive" alt="{{tour.details.TourName}}">
                                 </div>
                             </div>
 

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6">
-                    <p><i class="fa fa-phone"></i> For Support? Call Us: <span>+1 758-673-2214</span></p>
+                    <p><i class="fa fa-phone"></i> <?php echo lang('tpl_supportcall'); ?> <span>+1 758-673-2214</span></p>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="top_menu">
@@ -105,7 +105,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-sm-2">
-                    <div class="travel_logo"> <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/svg/Logo.svg" alt="logo" /></a> </div>
+                    <div class="travel_logo"> <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/svg/Logo-totg.png" alt="logo" /></a> </div>
                 </div>
                 <div class="col-md-10 col-sm-10"> <a href="javascript:;" class="menu-toggle"></a>
                     <div class="main_menu">

@@ -921,21 +921,21 @@
 		
 		//packagedetails-slider
 		packagedetails:function(){
-			$("#package_details_slider").owlCarousel({
-			items:1,
-			nav : true,
-			auto:true,
-			dots:false,
-			navText:['<i class="fa fa-arrow-left"></i>','<i class="fa fa-arrow-right"></i>'],
-			paginationSpeed : 1500,
-			slideSpeed : 3000,
-			smartSpeed:1000,
-			singleItem:true,
-			transitionStyle : "fade",
-			
-
- 
-  });
+	//		$("#package_details_slider").owlCarousel({
+	//		items:1,
+	//		nav : true,
+	//		auto:true,
+	//		dots:false,
+	//		navText:['<i class="fa fa-arrow-left"></i>','<i class="fa fa-arrow-right"></i>'],
+	//		paginationSpeed : 1500,
+	//		slideSpeed : 3000,
+	//		smartSpeed:1000,
+	//		singleItem:true,
+	//		transitionStyle : "fade",
+  //
+  //
+  //
+  //});
 			
 		},
 		//packagedetails-slider-End

@@ -16,14 +16,22 @@ class Tourssvc extends CI_Controller
     {
         //$filterData = $this->input->post(null, true);
 
-       // if (!empty($filterData)) {
-            $this->load->model('tours_model');
+        // if (!empty($filterData)) {
+        $this->load->model('tours_model');
 
-            $tours = $this->tours_model->GetToursList();
+        $tours = $this->tours_model->GetToursList();
 
-            //$this->mailsend_model->SendContactData($contactData['email'], $contactData['fullName'], $contactData['message']);
+        //$this->mailsend_model->SendContactData($contactData['email'], $contactData['fullName'], $contactData['message']);
         //}
         echo json_encode(array('Code' => 0, 'Status' => 'Success', 'Data' => $tours));
+    }
+
+    public function GetTourDetails()
+    {
+        $id = $this->input->post("TourId",True);
+        $this->load->model('tours_model');
+        $tourDetails = $this->tours_model->GetTourDetails($id);
+        echo json_encode(array('Code' => 0, 'Status' => 'Success', 'Data' => $tourDetails));
     }
 
 
