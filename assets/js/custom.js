@@ -407,7 +407,7 @@
 		
 		//packagedetailstab
 		packagedetailstab:function(){
-			$( "#Travelite_middle_tabs" ).tabs();
+			//$( "#Travelite_middle_tabs" ).tabs();
 			
 		},
 		//packagedetailstab end

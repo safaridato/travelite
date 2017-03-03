@@ -4,27 +4,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6">
-                    <p><i class="fa fa-phone"></i> <?php echo lang('tpl_supportcall'); ?> <span>+1 758-673-2214</span></p>
+                    <p><i class="fa fa-phone"></i> <?php echo lang('tpl_supportcall'); ?> <span>+1 758-673-2214</span>
+                    </p>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="top_menu">
                         <ul>
-                            <li><a ><i class="fa fa-globe"></i> Languages</a>
+                            <li><a><i class="fa fa-globe"></i> Languages</a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?php echo base_url();?>en/<?php echo uri_string();?>">English</a></li>
-                                    <li><a href="<?php echo base_url();?>ru/<?php echo uri_string();?>">Русский</a></li>
-                                    <li><a href="<?php echo base_url();?>de/<?php echo uri_string();?>">German</a></li>
+                                    <li><a href="<?php echo base_url(); ?>en/<?php echo uri_string(); ?>">English</a>
+                                    </li>
+                                    <li><a href="<?php echo base_url(); ?>ru/<?php echo uri_string(); ?>">Русский</a>
+                                    </li>
+                                    <li><a href="<?php echo base_url(); ?>de/<?php echo uri_string(); ?>">German</a>
+                                    </li>
                                 </ul>
                             </li>
-<!--                            <li><a href="">My Account</a></li>-->
-<!--                            <li class="Travelite_login_alert"><a href="#">Login</a></li>-->
-<!--                            <li class="Travelite_signup_alert"><a href="#">Signup</a></li>-->
-<!--                            <li><a href="">USD</a>-->
-<!--                                <ul class="sub-menu">-->
-<!--                                    <li><a href="">INR</a></li>-->
-<!--                                    <li><a href="">USD</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
+                            <!--                            <li><a href="">My Account</a></li>-->
+                            <!--                            <li class="Travelite_login_alert"><a href="#">Login</a></li>-->
+                            <!--                            <li class="Travelite_signup_alert"><a href="#">Signup</a></li>-->
+                            <!--                            <li><a href="">USD</a>-->
+                            <!--                                <ul class="sub-menu">-->
+                            <!--                                    <li><a href="">INR</a></li>-->
+                            <!--                                    <li><a href="">USD</a></li>-->
+                            <!--                                </ul>-->
+                            <!--                            </li>-->
                         </ul>
                     </div>
                 </div>
@@ -44,22 +48,24 @@
                         </div>
                         <div class="popup_inner">
                             <form>
-                                <input type="email" name="emaillogin" placeholder="Email Id"   class="input_login">
+                                <input type="email" name="emaillogin" placeholder="Email Id" class="input_login">
                                 <input type="password" name="passlogin" placeholder="Password" class="input_login">
                                 <input type="checkbox" id="login_check" name="checkbox" class="checkbox_login">
                                 <label for="login_check" class="remember_me">Remember me</label>
                                 <a href="#" class="forgot_link">Forget password?</a>
                             </form>
                             <div class="have_an_acnt">
-                                <p>Dont have an account?  <a href="#">Sign up</a></p>
+                                <p>Dont have an account? <a href="#">Sign up</a></p>
                             </div>
                             <div class="or_line">
                                 <span>(OR)</span>
                             </div>
                             <div class="social_links_login">
                                 <ul>
-                                    <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-                                    <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
+                                    <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with
+                                            facebook</a></li>
+                                    <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with
+                                            Google+</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,12 +80,14 @@
                         <div class="popup_inner">
                             <form class="signup_form">
                                 <input type="text" name="emaillogin" placeholder="First Name" class="input_login">
-                                <input type="text" name="emaillogin" placeholder="Last Name"  class="input_login">
-                                <input type="email" name="emaillogin" placeholder="Email Id"   class="input_login">
+                                <input type="text" name="emaillogin" placeholder="Last Name" class="input_login">
+                                <input type="email" name="emaillogin" placeholder="Email Id" class="input_login">
                                 <input type="password" name="passlogin" placeholder="Password" class="input_login">
-                                <input type="password" name="conf passlogin" placeholder="Confirm Password" class="input_login">
+                                <input type="password" name="conf passlogin" placeholder="Confirm Password"
+                                       class="input_login">
                                 <input type="checkbox" id="signup_check" name="checkbox" class="checkbox_login">
-                                <label for="signup_check" class="remember_me">I agree the Terms of Service, Privacy Policy, Guest
+                                <label for="signup_check" class="remember_me">I agree the Terms of Service, Privacy
+                                    Policy, Guest
                                     Refund Policy, and Host Guarantee Terms.</label>
                                 <input type="submit" value="SIGN UP" class="sub_signup">
                             </form>
@@ -88,8 +96,10 @@
                             </div>
                             <div class="social_links_login">
                                 <ul>
-                                    <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-                                    <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
+                                    <li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with
+                                            facebook</a></li>
+                                    <li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with
+                                            Google+</a></li>
                                 </ul>
                             </div>
                             <div class="already_member"> already member? <a href="#">login here</a></div>
@@ -105,13 +115,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-sm-2">
-                    <div class="travel_logo"> <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/svg/Logo-totg.png" alt="logo" /></a> </div>
+                    <div class="travel_logo">
+                        <a href="<?php echo base_url(); ?>">
+                            <div>
+                                <img src="<?php echo base_url(); ?>assets/images/Logo-totg.png" alt="logo"/>
+                            </div>
+
+                            <div>
+                                <span class="logo-title">Take off to</span>
+                                <span class="logo-title">GEORGIA</span>
+                            </div>
+
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-10 col-sm-10"> <a href="javascript:;" class="menu-toggle"></a>
+                <div class="col-md-10 col-sm-10"><a href="javascript:;" class="menu-toggle"></a>
                     <div class="main_menu">
                         <ul>
-                            <li class="active"><a href="<?php echo base_url();?>"><?php echo lang('tpl_home'); ?></a></li>
-                            <li><a href="<?php echo base_url();?>tours"><?php echo lang('tpl_tours'); ?></a>
+                            <li class="active"><a href="<?php echo base_url(); ?>"><?php echo lang('tpl_home'); ?></a>
+                            </li>
+                            <li><a href="<?php echo base_url(); ?>tours"><?php echo lang('tpl_tours'); ?></a>
                                 <ul class="sub-menu">
                                     <li><a href="Tour_destination.html">Destination</a>
                                         <ul class="sub-menu">
@@ -132,7 +155,7 @@
                                 </ul>
                             </li>
                             <li><a href="">special offers</a></li>
-                            <li><a href="<?php echo base_url();?>contact">contact</a></li>
+                            <li><a href="<?php echo base_url(); ?>contact">contact</a></li>
                         </ul>
                     </div>
                 </div>

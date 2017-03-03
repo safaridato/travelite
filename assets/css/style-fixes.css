@@ -1,3 +1,35 @@
-.view-details{
+.view-details {
     clear: both;
+}
+.travel_logo a{
+    display: table;
+}
+.travel_logo img {
+    height: 48px;
+    min-width: 48px;
+    margin: auto !important;
+}
+
+.travel_logo div{
+    display: table-cell;
+    vertical-align: middle;
+}
+.travel_logo div:last-child{
+    padding: 0 0 0 10px;
+}
+.travel_logo div:first-child{
+    width: 48px;
+}
+.travel_logo .logo-title {
+    display: inline-block;
+    font-size: 25px;
+    line-height: normal;
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+.travel_logo .logo-title:first-child {
+    font-size: 14px;
+    color: #808b8d;
+    margin-top: 6px;
 }

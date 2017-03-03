@@ -3,7 +3,22 @@
         <div class="row">
             <div class="col-md-4">
                 <aside class="widget widget_text">
-                    <a href="Home_01.html"><img src="<?php echo base_url();?>assets/svg/Logo.svg" alt="footer logo" /></a>
+<!--                    <a href="Home_01.html"><img src="--><?php //echo base_url();?><!--assets/svg/Logo.svg" alt="footer logo" /></a>-->
+
+                    <div class="travel_logo">
+                        <a href="<?php echo base_url(); ?>">
+                            <div>
+                                <img src="<?php echo base_url(); ?>assets/images/Logo-totg.png" alt="logo"/>
+                            </div>
+
+                            <div>
+                                <span class="logo-title">Take off to</span>
+                                <span class="logo-title">GEORGIA</span>
+                            </div>
+
+                        </a>
+                    </div>
+
                     <p>In 2015, We launched Travellers with the belief that other travellers would share our desire to experience authentic adventures in a responsible and sustainable manner. <br>
                         <br>
                         We've grown from a one-man show to a company of over 50 world wide, and from a handful of trips in all over the world.</p>
@@ -626,7 +641,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6"> <span>Stay Connected with Us - </span> <a href=""><i class="fa fa-facebook"></i></a> <a href=""><i class="fa fa-twitter"></i></a> <a href=""><i class="fa fa-google-plus"></i></a> <a href=""><i class="fa fa-linkedin"></i></a> <a href=""><i class="fa fa-rss"></i></a> </div>
-            <div class="col-md-6 col-sm-6 text-right"> <span>Travellers@2016. All Right Reserved</span> </div>
+            <div class="col-md-6 col-sm-6 text-right"> <span>Take off to Georgia@2016. All Right Reserved</span> </div>
         </div>
     </div>
 </div>

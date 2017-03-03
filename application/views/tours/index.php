@@ -18,44 +18,44 @@
                         </form>
 
                     </div>
-                    <aside class="widget destination_widget">
-                        <h4 class="widget-title">chosse destination</h4>
-                        <div class="travel_checkbox_round">
-                            <input type="checkbox" id="singapore">
-                            <label for="singapore">Singapore</label>
-                            <input type="checkbox" id="africa">
-                            <label for="africa">africa</label>
-                            <input type="checkbox" id="australia">
-                            <label for="australia">australia</label>
-                            <input type="checkbox" id="america">
-                            <label for="america">america</label>
-                            <input type="checkbox" id="nepal">
-                            <label for="nepal">nepal</label>
-                            <input type="checkbox" id="europe">
-                            <label for="europe">europe</label>
-                            <input type="checkbox" id="japan">
-                            <label for="japan">japan</label>
-                            <input type="checkbox" id="india">
-                            <label for="india">india</label>
-                            <input type="checkbox" id="egypt">
-                            <label for="egypt">egypt</label>
-                            <input type="checkbox" id="malaysia">
-                            <label for="malaysia">malaysia</label>
+<!--                    <aside class="widget destination_widget">-->
+<!--                        <h4 class="widget-title">chosse destination</h4>-->
+<!--                        <div class="travel_checkbox_round">-->
+<!--                            <input type="checkbox" id="singapore">-->
+<!--                            <label for="singapore">Singapore</label>-->
+<!--                            <input type="checkbox" id="africa">-->
+<!--                            <label for="africa">africa</label>-->
+<!--                            <input type="checkbox" id="australia">-->
+<!--                            <label for="australia">australia</label>-->
+<!--                            <input type="checkbox" id="america">-->
+<!--                            <label for="america">america</label>-->
+<!--                            <input type="checkbox" id="nepal">-->
+<!--                            <label for="nepal">nepal</label>-->
+<!--                            <input type="checkbox" id="europe">-->
+<!--                            <label for="europe">europe</label>-->
+<!--                            <input type="checkbox" id="japan">-->
+<!--                            <label for="japan">japan</label>-->
+<!--                            <input type="checkbox" id="india">-->
+<!--                            <label for="india">india</label>-->
+<!--                            <input type="checkbox" id="egypt">-->
+<!--                            <label for="egypt">egypt</label>-->
+<!--                            <input type="checkbox" id="malaysia">-->
+<!--                            <label for="malaysia">malaysia</label>-->
+<!---->
+<!--                        </div>-->
+<!---->
+<!--                    </aside>-->
 
-                        </div>
-
-                    </aside>
-
-                    <aside class="widget widget_filter">
-                        <h4 class="widget-title">filter by price</h4>
-                        <div class="price_filter_slider">
-                            <div id="slider"></div>
-                            <p class="range_text">
-                                <label for="amount">Price range:</label>
-                                <input type="text" id="amount" readonly>
-                            </p>
-                        </div>
-                    </aside>
+<!--                    <aside class="widget widget_filter">-->
+<!--                        <h4 class="widget-title">filter by price</h4>-->
+<!--                        <div class="price_filter_slider">-->
+<!--                            <div id="slider"></div>-->
+<!--                            <p class="range_text">-->
+<!--                                <label for="amount">Price range:</label>-->
+<!--                                <input type="text" id="amount" readonly>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </aside>-->
 
                     <aside class="widget category_widget">
                         <h4 class="widget-title">categories</h4>
@@ -137,7 +137,7 @@
                     <div class="tour_packages_description">
                         <div class="tour_heading">
                             <h4>Australia Tour Packages</h4>
-                            <span class="packs">(178 Packs Found)</span>
+<!--                            <span class="packs">(178 Packs Found)</span>-->
                         </div>
                         <p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy
                             have suffered alteration in

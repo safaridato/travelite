@@ -69,6 +69,7 @@
                     transitionStyle: "fade",
                 });
 
+                //$( "#Travelite_middle_tabs" ).tabs();
 
             }, 2000);
 
