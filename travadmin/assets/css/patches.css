@@ -2,15 +2,20 @@
     padding-left: 36px;
 
 }
-.input-icon i{
+
+.input-icon i {
     font-size: 13px !important;
 }
 
-
-.sub-categories-list{
+.sub-categories-list {
     float: left;
     margin-left: 20px;
 }
-.catgories-list{
+
+.catgories-list {
     float: left;
 }
+
+/*.form-horizontal .input-append {*/
+    /*display: none;*/
+/*}*/

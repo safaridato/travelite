@@ -9,16 +9,19 @@
 
     <!--basic styles-->
 
-    <link href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="<?php echo base_url();?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css" />
-    <link href="<?php echo base_url();?>/assets/css/patche.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/patche.css" rel="stylesheet" />
 
     <!--[if IE 7]>
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome-ie7.min.css" />
     <![endif]-->
 
     <!--page specific plugin styles-->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery-ui-1.10.3.custom.min.css" />
+    <!--page specific plugin styles-->
+
 
     <!--fonts-->
 
@@ -34,8 +37,36 @@
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/ace-ie.min.css" />
     <![endif]-->
 
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/froala_editor.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/froala_style.css">-->
+<!---->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/code_view.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/colors.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/draggable.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/emoticons.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/image_manager.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/image.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/line_breaker.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/table.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/char_counter.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/video.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/fullscreen.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/file.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url();?><!--/assets/css/froala/plugins/quick_insert.css">-->
+
+
     <!--inline styles related to this page-->
     <script src="<?php echo base_url();?>/assets/js/jquery-2.1.4.min.js"></script>
+
+
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='<?php echo base_url();?>/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
 </head>
 
 <body>
@@ -45,7 +76,7 @@
 <a href="#" class="brand">
     <small>
         <i class="icon-leaf"></i>
-        Take of to Georgia
+        Take off to Georgia
     </small>
 </a><!--/.brand-->
 
@@ -330,7 +361,7 @@
 </a>
 
 <!--basic scripts-->
-
+<?php /*
 <!--[if !IE]>-->
 
 <script type="text/javascript">
@@ -345,6 +376,8 @@
 </script>
 <![endif]-->
 
+*/ ?>
+
 <script type="text/javascript">
     if("ontouchend" in document) document.write("<script src='<?php echo base_url();?>/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
@@ -352,11 +385,258 @@
 
 <!--page specific plugin scripts-->
 
+
+<script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/markdown/markdown.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/markdown/bootstrap-markdown.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.hotkeys.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-wysiwyg.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootbox.min.js"></script>
+
 <!--ace scripts-->
 
 <script src="<?php echo base_url();?>/assets/js/ace-elements.min.js"></script>
 <script src="<?php echo base_url();?>/assets/js/ace.min.js"></script>
 
 <!--inline scripts related to this page-->
+
+
+
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+
+        function showErrorAlert (reason, detail) {
+            var msg='';
+            if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+            else {
+                console.log("error uploading file", reason, detail);
+            }
+            $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+        }
+
+        //$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
+
+        //but we want to change a few buttons colors for the third style
+        $('#editor1').ace_wysiwyg({
+            toolbar:
+                [
+                    'font',
+                    null,
+                    'fontSize',
+                    null,
+                    {name:'bold', className:'btn-info'},
+                    {name:'italic', className:'btn-info'},
+                    {name:'strikethrough', className:'btn-info'},
+                    {name:'underline', className:'btn-info'},
+                    null,
+                    {name:'insertunorderedlist', className:'btn-success'},
+                    {name:'insertorderedlist', className:'btn-success'},
+                    {name:'outdent', className:'btn-purple'},
+                    {name:'indent', className:'btn-purple'},
+                    null,
+                    {name:'justifyleft', className:'btn-primary'},
+                    {name:'justifycenter', className:'btn-primary'},
+                    {name:'justifyright', className:'btn-primary'},
+                    {name:'justifyfull', className:'btn-inverse'},
+                    null,
+                    {name:'createLink', className:'btn-pink'},
+                    {name:'unlink', className:'btn-pink'},
+                    null,
+                    {name:'insertImage', className:'btn-success'},
+                    null,
+                    'foreColor',
+                    null,
+                    {name:'undo', className:'btn-grey'},
+                    {name:'redo', className:'btn-grey'}
+                ],
+            'wysiwyg': {
+                fileUploadError: showErrorAlert
+            }
+        }).prev().addClass('wysiwyg-style2');
+
+
+        $('#editor2').ace_wysiwyg({
+            toolbar:
+                [
+                    'font',
+                    null,
+                    'fontSize',
+                    null,
+                    {name:'bold', className:'btn-info'},
+                    {name:'italic', className:'btn-info'},
+                    {name:'strikethrough', className:'btn-info'},
+                    {name:'underline', className:'btn-info'},
+                    null,
+                    {name:'insertunorderedlist', className:'btn-success'},
+                    {name:'insertorderedlist', className:'btn-success'},
+                    {name:'outdent', className:'btn-purple'},
+                    {name:'indent', className:'btn-purple'},
+                    null,
+                    {name:'justifyleft', className:'btn-primary'},
+                    {name:'justifycenter', className:'btn-primary'},
+                    {name:'justifyright', className:'btn-primary'},
+                    {name:'justifyfull', className:'btn-inverse'},
+                    null,
+                    {name:'createLink', className:'btn-pink'},
+                    {name:'unlink', className:'btn-pink'},
+                    null,
+                    {name:'insertImage', className:'btn-success'},
+                    null,
+                    'foreColor',
+                    null,
+                    {name:'undo', className:'btn-grey'},
+                    {name:'redo', className:'btn-grey'}
+                ],
+            'wysiwyg': {
+                fileUploadError: showErrorAlert
+            }
+        }).prev().addClass('wysiwyg-style2');
+
+
+        $('#editor3').ace_wysiwyg({
+            toolbar:
+                [
+                    'font',
+                    null,
+                    'fontSize',
+                    null,
+                    {name:'bold', className:'btn-info'},
+                    {name:'italic', className:'btn-info'},
+                    {name:'strikethrough', className:'btn-info'},
+                    {name:'underline', className:'btn-info'},
+                    null,
+                    {name:'insertunorderedlist', className:'btn-success'},
+                    {name:'insertorderedlist', className:'btn-success'},
+                    {name:'outdent', className:'btn-purple'},
+                    {name:'indent', className:'btn-purple'},
+                    null,
+                    {name:'justifyleft', className:'btn-primary'},
+                    {name:'justifycenter', className:'btn-primary'},
+                    {name:'justifyright', className:'btn-primary'},
+                    {name:'justifyfull', className:'btn-inverse'},
+                    null,
+                    {name:'createLink', className:'btn-pink'},
+                    {name:'unlink', className:'btn-pink'},
+                    null,
+                    {name:'insertImage', className:'btn-success'},
+                    null,
+                    'foreColor',
+                    null,
+                    {name:'undo', className:'btn-grey'},
+                    {name:'redo', className:'btn-grey'}
+                ],
+            'wysiwyg': {
+                fileUploadError: showErrorAlert
+            }
+        }).prev().addClass('wysiwyg-style2');
+
+
+//
+//        $('#editor2').css({'height':'200px'}).ace_wysiwyg({
+//            toolbar_place: function(toolbar) {
+//                return $(this).closest('.widget-box').find('.widget-header').prepend(toolbar);
+//            },
+//            toolbar:
+//                [
+//                    'bold',
+//                    {name:'italic' , title:'Change Title!', icon: 'icon-leaf'},
+//                    'strikethrough',
+//                    'underline',
+//                    null,
+//                    'insertunorderedlist',
+//                    'insertorderedlist',
+//                    null,
+//                    'justifyleft',
+//                    'justifycenter',
+//                    'justifyright'
+//                ],
+//            speech_button:false
+//        });
+
+
+        $('[data-toggle="buttons-radio"]').on('click', function(e){
+            var target = $(e.target);
+            var which = parseInt($.trim(target.text()));
+            var toolbar = $('#editor1').prev().get(0);
+            if(which == 1 || which == 2 || which == 3) {
+                toolbar.className = toolbar.className.replace(/wysiwyg\-style(1|2)/g , '');
+                if(which == 1) $(toolbar).addClass('wysiwyg-style1');
+                else if(which == 2) $(toolbar).addClass('wysiwyg-style2');
+            }
+        });
+
+
+
+
+
+        //Add Image Resize Functionality to Chrome and Safari
+        //webkit browsers don't have image resize functionality when content is editable
+        //so let's add something using jQuery UI resizable
+        //another option would be opening a dialog for user to enter dimensions.
+        if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.toLowerCase()) ) {
+
+            var lastResizableImg = null;
+            function destroyResizable() {
+                if(lastResizableImg == null) return;
+                lastResizableImg.resizable( "destroy" );
+                lastResizableImg.removeData('resizable');
+                lastResizableImg = null;
+            }
+
+            var enableImageResize = function() {
+                $('.wysiwyg-editor')
+                    .on('mousedown', function(e) {
+                        var target = $(e.target);
+                        if( e.target instanceof HTMLImageElement ) {
+                            if( !target.data('resizable') ) {
+                                target.resizable({
+                                    aspectRatio: e.target.width / e.target.height,
+                                });
+                                target.data('resizable', true);
+
+                                if( lastResizableImg != null ) {//disable previous resizable image
+                                    lastResizableImg.resizable( "destroy" );
+                                    lastResizableImg.removeData('resizable');
+                                }
+                                lastResizableImg = target;
+                            }
+                        }
+                    })
+                    .on('click', function(e) {
+                        if( lastResizableImg != null && !(e.target instanceof HTMLImageElement) ) {
+                            destroyResizable();
+                        }
+                    })
+                    .on('keydown', function() {
+                        destroyResizable();
+                    });
+            }
+
+            enableImageResize();
+
+            /**
+             //or we can load the jQuery UI dynamically only if needed
+             if (typeof jQuery.ui !== 'undefined') enableImageResize();
+             else {//load jQuery UI if not loaded
+			$.getScript($assets+"/js/jquery-ui-1.10.3.custom.min.js", function(data, textStatus, jqxhr) {
+				if('ontouchend' in document) {//also load touch-punch for touch devices
+					$.getScript($assets+"/js/jquery.ui.touch-punch.min.js", function(data, textStatus, jqxhr) {
+						enableImageResize();
+					});
+				} else	enableImageResize();
+			});
+		}
+             */
+        }
+
+
+    });
+</script>
 </body>
 </html>

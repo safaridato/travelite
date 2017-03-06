@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6">
-                    <p><i class="fa fa-phone"></i> <?php echo lang('tpl_supportcall'); ?> <span>+1 758-673-2214</span>
+                    <p><i class="fa fa-phone"></i> <?php echo lang('tpl_supportcall'); ?> <span>+995 593 651 832</span>
                     </p>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -135,27 +135,72 @@
                             <li class="active"><a href="<?php echo base_url(); ?>"><?php echo lang('tpl_home'); ?></a>
                             </li>
                             <li><a href="<?php echo base_url(); ?>tours"><?php echo lang('tpl_tours'); ?></a>
+                                <?php
+                                //print_r(categories_menu())
+                                ?>
+
                                 <ul class="sub-menu">
-                                    <li><a href="Tour_destination.html">Destination</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="tour_australia.html">Australia</a></li>
-                                            <li><a href="tour_egypt.html">Egypt</a></li>
-                                            <li><a href="tour_singapore.html">Singapore</a></li>
-                                            <li><a href="tour_malaysia.html">Malaysia</a></li>
-                                            <li><a href="tour_india.html">India</a></li>
-                                            <li><a href="tour_nepal.html">Nepal</a></li>
-                                            <li><a href="tour_russia.html">Russia</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="Tour-Packages-Details.html">Tour Detail</a></li>
-                                    <li><a href="Tour-Packages-Booking.html">Booking</a></li>
-                                    <li><a href="Tour-Packages-Booking.html">Checkout</a></li>
-                                    <li><a href="Tour-Packages-Grid-View.html">tour-packages-grid-view</a></li>
-                                    <li><a href="Tour-Packages-List-View.html">tour-packages-list-view</a></li>
+
+                                    <?php
+                                    $cats = categories_menu();
+                                    if (!empty($cats)) {
+                                        foreach ($cats as $key => $val) {
+                                            ?>
+                                            <li>
+                                                <a href="<?php echo base_url()."tours/index/".$val['cats']['Id'];?>"><?php echo $val['cats']['CategoryName']; ?></a>
+                                            </li>
+                                            <?php
+                                            if (!empty($val['cats']['subs'])) {
+
+                                                ?>
+                                                <ul class="sub-menu">
+                                                    <?php
+                                                    foreach ($val['cats']['subs'] as $sKey => $sVal) {
+                                                        ?>
+                                                        <li>
+                                                            <a href="<?php echo base_url()."tours/index/".$sVal['Id'];?>"><?php echo $sVal['CategoryName']; ?></a>
+                                                        </li>
+
+                                                        <?php
+
+                                                    }
+                                                    ?>
+                                                </ul>
+                                                <?php
+                                            }
+
+                                        }
+                                    }
+
+                                    ?>
+
+                                    <!--                                    <li>-->
+                                    <!--                                        <a href="Tour_destination.html">Destination</a>-->
+                                    <!--                                        <ul class="sub-menu">-->
+                                    <!--                                            <li><a href="tour_australia.html">Australia</a></li>-->
+                                    <!--                                            <li><a href="tour_egypt.html">Egypt</a></li>-->
+                                    <!--                                            <li><a href="tour_singapore.html">Singapore</a></li>-->
+                                    <!--                                            <li><a href="tour_malaysia.html">Malaysia</a></li>-->
+                                    <!--                                            <li><a href="tour_india.html">India</a></li>-->
+                                    <!--                                            <li><a href="tour_nepal.html">Nepal</a></li>-->
+                                    <!--                                            <li><a href="tour_russia.html">Russia</a></li>-->
+                                    <!--                                        </ul>-->
+                                    <!--                                    </li>-->
+                                    <!--                                    <li><a href="Tour-Packages-Details.html">Tour Detail</a></li>-->
+                                    <!--                                    <li><a href="Tour-Packages-Booking.html">Booking</a></li>-->
+                                    <!--                                    <li><a href="Tour-Packages-Booking.html">Checkout</a></li>-->
+                                    <!--                                    <li><a href="Tour-Packages-Grid-View.html">tour-packages-grid-view</a></li>-->
+                                    <!--                                    <li><a href="Tour-Packages-List-View.html">tour-packages-list-view</a></li>-->
                                 </ul>
                             </li>
-                            <li><a href="">special offers</a></li>
+                            <!--                            <li><a href="-->
+                            <?php //echo base_url();
+                            ?><!--tours/index/2/themed">-->
+                            <?php //echo lang('tpl_themedtours');
+                            ?><!--</a></li>-->
+                            <li><a href=""><?php echo lang('tpl_attractions'); ?></a></li>
                             <li><a href="<?php echo base_url(); ?>contact">contact</a></li>
+                            <li><a href="<?php echo base_url(); ?>useful"><?php echo lang('tpl_useful'); ?></a></li>
                         </ul>
                     </div>
                 </div>

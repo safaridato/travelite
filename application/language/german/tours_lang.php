@@ -7,3 +7,4 @@ $lang['tours_includes'] = 'Includes';
 $lang['tours_moreinformation'] = 'More Information';
 
 
+

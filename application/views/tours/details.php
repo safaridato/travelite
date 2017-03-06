@@ -1,4 +1,4 @@
-<div ng-controller="TourDetailsController">
+<div ng-controller="TourDetailsController" ng-init="GetTourDetails(<?php echo $tourId;?>)">
     <div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0"
          style="background-image:url(<?php echo base_url();?>{{tourDetails.Details.ImageLink}});">
         <ul>
@@ -233,7 +233,8 @@
                             <!--  tab content start -->
                             <div id="tab_search_1" class="tab_details_part">
 
-                                <p>{{tourDetails.Details.FullReview}}</p>
+
+                                <p ng-bind-html="prepHtml(tourDetails.Details.FullReview)"></p>
 
                                 <div class="inner_content">
                                     <div class="day_title">Day 1</div>

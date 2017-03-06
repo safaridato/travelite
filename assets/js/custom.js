@@ -1092,13 +1092,13 @@ $('.content_1').show();
 
     $('.more_text').each(function() {
         var content = $(this).html();
- 
+ var moreTextCustom = $(this).attr("data-lang-more");
         if(content.length > showChar) {
  
             var c = content.substr(0, showChar);
             var h = content.substr(showChar, content.length - showChar);
  
-            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moreTextCustom + '</a></span>';
  
             $(this).html(html);
         }

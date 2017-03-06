@@ -31,14 +31,15 @@
 
 
         })
-        .controller('TourDetailsController', function ($scope, $locale, $http) {
+        .controller('TourDetailsController', function ($scope, $locale, $http, $sce) {
             $scope.tourDetails = {};
+           // $scope.tourId;
 
             $scope.formFields = {};
-            $scope.GetTourDetails = function () {
+            $scope.GetTourDetails = function (tourId) {
                 var fd = new FormData();
                 //$scope.formFields.loadForm = true;
-                fd.append("TourId", '1');
+                fd.append("TourId", tourId);
                 $http({
                     method: "POST",
                     url: "services/tourssvc/GetTourDetails/",
@@ -53,7 +54,12 @@
                 });
             }
 
-            $scope.GetTourDetails();
+            $scope.prepHtml = function (value) {
+              return  $sce.trustAsHtml(value);
+            }
+
+
+
 
             setTimeout(function () {
                 $("#package_details_slider").owlCarousel({

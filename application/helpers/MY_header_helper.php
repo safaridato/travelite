@@ -21,6 +21,19 @@ if (!function_exists('angular_base')) {
     }
 }
 
+if (!function_exists('categories_menu')) {
+    function categories_menu()
+    {
+        $categoriesMenu = array();
+        $CI =&get_instance();
+
+        $CI->load->model('tours_model');
+        $categoriesMenu = $CI->tours_model->GetToursCategoriesList();
+
+        return $categoriesMenu;
+    }
+}
+
 
 if (!function_exists('print_metas')) {
     function print_metas($currentLnk = '')
