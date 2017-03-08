@@ -3,7 +3,8 @@
     <div class="span12">
         <!--PAGE CONTENT BEGINS-->
 
-        <form class="form-horizontal wysiwyg" method="post" name="addTour" id="addTourFrm" novalidate="novalidate">
+        <form class="form-horizontal wysiwyg" method="post" name="addTour" enctype="multipart/form-data" id="addTourFrm"
+              novalidate="novalidate">
 
 
             <!--                <section id="editor">-->
@@ -66,9 +67,14 @@
 
 
             <div class="control-group">
+                <label class="control-label">Image Preview</label>
+                <div class="controls"><input type="file" id="thumb" name="thumb" accept="image/jpeg"></div>
+            </div>
+
+            <div class="control-group">
                 <label class="control-label">Tour Description English</label>
 
-                <input type="hidden" id="thumb" name="thumb" value="">
+
                 <input type="hidden" id="editor1_hidden" name="names[1][fulldescription]">
                 <div class="controls">
                     <div class="wysiwyg-editor" id="editor1"></div>

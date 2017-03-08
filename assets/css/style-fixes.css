@@ -33,3 +33,7 @@
     color: #808b8d;
     margin-top: 6px;
 }
+
+#footer_wrapper.height-fix{
+    min-height: 50px;
+}

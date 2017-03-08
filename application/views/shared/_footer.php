@@ -1,7 +1,7 @@
-<footer id="footer_wrapper">
+<footer id="footer_wrapper" class="height-fix">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <aside class="widget widget_text">
 <!--                    <a href="Home_01.html"><img src="--><?php //echo base_url();?><!--assets/svg/Logo.svg" alt="footer logo" /></a>-->
 
@@ -56,6 +56,9 @@
 <!--                    </ul>-->
 <!--                </aside>-->
 <!--            </div>-->
+
+
+            <?php /*
             <div class="col-md-6">
                 <aside class="widget widget_search_availability">
                     <div class="wsa_tab">
@@ -637,6 +640,8 @@
 
 
             </div>
+
+            */?>
         </div>
     </div>
 </footer>
