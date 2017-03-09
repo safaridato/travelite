@@ -52,7 +52,7 @@ class Toursmanager extends CI_Controller
             //Set Product
             $incomeForm['tourName'] = $incomeForm['names'][1]['tourName'];
 
-            if(!isset($incomeForm['thumb'])){
+            if (!isset($incomeForm['thumb'])) {
                 $incomeForm['thumb'] = '';
             }
 
@@ -61,16 +61,25 @@ class Toursmanager extends CI_Controller
 
             if ($thumb['thumb'] && $tourId > 0) {
                 //set thumb to tour by tour id
-                $this->tours_model->SetThumb($tourId, "/travelite".$thumb['thumb']);
+                $this->tours_model->SetThumb($tourId, "/travelite" . $thumb['thumb']);
             }
 
 
             //bind categories
 
+            $subCategories = array();
+            if (array_key_exists('subcategory', $incomeForm)) {
+                $subCategories = $incomeForm['subcategory'];
+            }
 
-            if($tourId > 0){
-                header("Location: ".base_url()."toursmanager/edit/".$tourId);
-            }else{
+            if (isset($incomeForm['category']) && $tourId > 0) {
+                $this->tours_model->SetCategories($tourId, $subCategories, $incomeForm['category']);
+            }
+
+
+            if ($tourId > 0) {
+                header("Location: " . base_url() . "toursmanager/edit/" . $tourId);
+            } else {
                 echo "Product Add Problem Please Contact Administrator";
             }
 
@@ -84,7 +93,7 @@ class Toursmanager extends CI_Controller
 
     public function edit($tourId = false)
     {
-        $this->td['content'] = "toursmanager/add";
+        $this->td['content'] = "toursmanager/edit";
 
 
         $config = array(
@@ -108,13 +117,17 @@ class Toursmanager extends CI_Controller
 
 
         } else {
-            $incomeForm = $this->input->post(null, true);
+            $incomeForm = $this->input->post(null, false);
+
+
+            //print_r($incomeForm);
+            //die('');
 
 
             //Set Product
             $incomeForm['tourName'] = $incomeForm['names'][1]['tourName'];
 
-            if(!isset($incomeForm['thumb'])){
+            if (!isset($incomeForm['thumb'])) {
                 $incomeForm['thumb'] = '';
             }
 
@@ -123,21 +136,36 @@ class Toursmanager extends CI_Controller
 
             if ($thumb['thumb'] && $tourId > 0) {
                 //set thumb to tour by tour id
-                $this->tours_model->SetThumb($tourId, "/travelite".$thumb['thumb']);
+                $this->tours_model->SetThumb($tourId, "/travelite" . $thumb['thumb']);
             }
 
 
             //bind categories
 
-
-            if($tourId > 0){
-                header("Location: ".base_url()."toursmanager/edit/".$tourId);
-            }else{
-                echo "Product Add Problem Please Contact Administrator";
+            $subCategories = array();
+            if (array_key_exists('subcategory', $incomeForm)) {
+                $subCategories = $incomeForm['subcategory'];
             }
+
+            if (isset($incomeForm['category']) && $tourId > 0) {
+                $this->tours_model->DeleteTourCategories($tourId);
+                $this->tours_model->SetCategories($tourId, $subCategories, $incomeForm['category']);
+            }
+
+
+//            if($tourId > 0){
+//                header("Location: ".base_url()."toursmanager/edit/".$tourId);
+//            }else{
+//                echo "Product Add Problem Please Contact Administrator";
+//            }
 
         }
 
+        $this->td['tourDetails'] = $this->tours_model->GetTourDetails($tourId);
+
+        if (empty($this->td['tourDetails'])) {
+            // header("Location: /janashiacms/productsmanager");
+        }
 
         $this->td['categories'] = $this->tours_model->GetToursMainCategories();
         $this->load->view('main_tpl', $this->td);
@@ -147,11 +175,11 @@ class Toursmanager extends CI_Controller
     protected function _ThumbUpload($files, $tourId)
     {
 
-        if (isset($files["thumb"])) {
+        if (isset($files["thumb"]) && isset($files["thumb"]['name']) && $files["thumb"]['name'] != '') {
 
             $imgDir = $tourId . "/";
             $lnkDir = "/cdn/tourimages/" . $imgDir;
-            $lnkThumbsDir = "/cdn/tourimages/" . $imgDir."thumbs/";
+            $lnkThumbsDir = "/cdn/tourimages/" . $imgDir . "thumbs/";
             $filesDir = $_SERVER['DOCUMENT_ROOT'] . "/travelite/" . $lnkDir;   //"C:\\inetpub\\wwwroot\\cdn.barami.us\\vinimages\\ufwp\\";
 
             $thumb = 'thumbs/';

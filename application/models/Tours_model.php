@@ -116,7 +116,7 @@ class Tours_model extends CI_Model
             $serviceResult = $resultService->result_array();
             $resultService->next_result();
 
-
+            //$tourResult[0]["FullReview"] = htmlspecialchars_decode($tourResult[0]["FullReview"]);
             $tourDetails = array('Details' => $tourResult[0], 'Pics' => $picsResult, 'Bundles' => $bundlesResult, 'Services' => $serviceResult);
         }
 

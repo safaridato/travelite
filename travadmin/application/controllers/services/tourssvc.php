@@ -16,7 +16,7 @@ class Tourssvc extends CI_Controller
         $tourId = $this->input->post('tourId', true);
 
         $subCatsList = array();
-        if ($categoryId > 0 && $tourId >= 0) {
+        if ($categoryId > 0) {
 
             $subCatsList = $this->tourssvc_model->GetSubCategoriesList($categoryId, $tourId);
 

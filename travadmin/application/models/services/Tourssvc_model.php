@@ -9,7 +9,7 @@ class Tourssvc_model extends CI_Model
 
     public function GetSubCategoriesList($categoryId = 0, $tourId = 0)
     {
-        $query = "call GetTourSubCategories('" . $categoryId . "', " . $tourId . ");";
+        $query = "call GetSubCategories('" . $categoryId . "', " . $tourId . ");";
         $categoriesResult = $this->db->query($query);
         return $categoriesResult->result_array();
 
