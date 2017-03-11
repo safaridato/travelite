@@ -218,7 +218,7 @@
 <!--    </ul>-->
 <!--</li>-->
 
-    <?php $this->load->view('alerts/top');?>
+    <?php //$this->load->view('alerts/top');?>
 
 
 <li class="light-blue">

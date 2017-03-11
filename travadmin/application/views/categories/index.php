@@ -1,20 +1,23 @@
 <div class="row-fluid bindContainer" id="categoriesBindContainer">
-    <div class="span6">
+    <div class="span10">
         <ul class="categoriesTree">
             <!--            Add New Category-->
             <li>
                 <div>
                     <input type="text" name="category[]" placeholder="Category Name EN"
-                           class="addNewCategoryName input-medium" id="addNewCategoryName1">
+                           class="addNewCategoryName input-large" id="addNewCategoryName1">
                     <input type="text" name="category[]" placeholder="Category Name DE"
-                           class="addNewCategoryName input-medium" id="addNewCategoryName2">
+                           class="addNewCategoryName input-large" id="addNewCategoryName2">
                     <input type="text" name="category[]" placeholder="Category Name RU"
-                           class="addNewCategoryName input-medium" id="addNewCategoryName3">
+                           class="addNewCategoryName input-large" id="addNewCategoryName3">
 
                     <hr/>
-                    <textarea placeholder="Descriptions EN" id="addNewCategoryDescription1"></textarea>
-                    <textarea placeholder="Descriptions DE" id="addNewCategoryDescription2"></textarea>
-                    <textarea placeholder="Descriptions RU" id="addNewCategoryDescription3"></textarea>
+                    <textarea placeholder="Descriptions EN" class="input-large"
+                              id="addNewCategoryDescription1"></textarea>
+                    <textarea placeholder="Descriptions DE" class="input-large"
+                              id="addNewCategoryDescription2"></textarea>
+                    <textarea placeholder="Descriptions RU" class="input-large"
+                              id="addNewCategoryDescription3"></textarea>
 
 
                     <input type="file" name="file1[]" id="file1" class="addCategoryPic">
@@ -33,18 +36,71 @@
 
             <?php
             foreach ($categoriesList as $key => $val) {
+//                echo "<pre>";
+//                print_r($categoriesList);
                 ?>
 
                 <!--Main Category List-->
                 <li class="category_row_<?php echo $val['categories']['Id']; ?>">
-                    <div class="cat-merge">
-                        <input type="text" value="<?php echo $val['categories']['CategoryName']; ?>"
-                               id="cat_<?php echo $val['categories']['Id']; ?>" class="input-small main-category-in">
+                    <div>
+                        main category
                     </div>
+                    <!--                    Category  Names -->
+                    <div class="cat-merge">
+                        <!--                        <input type="text" value="-->
+                        <?php //echo $val['categories']['CategoryName']; ?><!--"-->
+                        <!--                               id="cat_-->
+                        <?php //echo $val['categories']['Id']; ?><!--" class="input-large main-category-in">-->
+                        <!--                        <input type="text" value="-->
+                        <?php //echo $val['categories']['CategoryName']; ?><!--"-->
+                        <!--                               id="cat_-->
+                        <?php //echo $val['categories']['Id']; ?><!--" class="input-large main-category-in">-->
+                        <!--                        <input type="text" value="-->
+                        <?php //echo $val['categories']['CategoryName']; ?><!--"-->
+                        <!--                               id="cat_-->
+                        <?php //echo $val['categories']['Id']; ?><!--" class="input-large main-category-in">-->
+
+                        <?php
+
+                        foreach ($val['categories']['translations'] as $tKey => $tVal) {
+                            ?>
+                            <input type="text" value="<?php echo $tVal['Value']; ?>"
+                                   id="catVal_<?php echo $tVal['CategoryId']."_".$tVal['LangId']; ?>"
+                                   placeholder="Category Name <?php echo $tVal['LangIso']; ?>"
+                                   class="input-large main-category-in">
+                            <?php
+                        }
+
+                        ?>
+
+
+                    </div>
+
+                    <!--                    Category  Image -->
                     <div class="cat-merge">
                         <img class="cat-img"
                              src="http://localhost/travelite<?php echo $val['categories']['ImageLink']; ?>">
+
+                        <input type="file" name="file1[]" id="filemc<?php echo $tVal['CategoryId']; ?>"
+                               class="addCategoryPic">
                     </div>
+
+                    <!--                    Category  Descriptions -->
+                    <div class="cat-merge">
+                        <?php
+
+                        foreach ($val['categories']['translations'] as $tKey => $tVal) {
+                            ?>
+                            <textarea id="catDesc_<?php echo $tVal['CategoryId']."_".$tVal['LangId']; ?>"
+                                      placeholder="Description <?php echo $tVal['LangIso']; ?>"
+                                      class="input-large main-category-in"><?php echo $tVal['PackageDescription']; ?></textarea>
+                            <?php
+                        }
+                        ?>
+
+                    </div>
+
+
                     <button type="button" class="deleteCategory btn btn-minier btn-danger"
                             data-catname="<?php echo $val['categories']['CategoryName']; ?>"
                             data-category="<?php echo $val['categories']['Id']; ?>">&times;</button>
@@ -87,7 +143,12 @@
                     </div>
                 </li>
                 <!--                Add SubCategory-->
+
+                <!--                Sub Categories List-->
                 <?php
+
+//                echo "<pre>";
+//                print_r($val['subs']);
                 if (!empty($val['subs'])) {
                     ?>
                     <ul class="subCategoriesTree" id="subTree_<?php echo $val['categories']['Id']; ?>">
@@ -97,8 +158,44 @@
                             ?>
                             <!--                            SubCategory List Item-->
                             <li class="category_row_<?php echo $sVal['Id']; ?>">
-                                <input type="text" id="cat_<?php echo $sVal['Id']; ?>"
-                                       value="<?php echo $sVal['CategoryName']; ?>" class="input-small">
+                                <!--                                <input type="text" id="cat_-->
+                                <?php //echo $sVal['Id']; ?><!--"-->
+                                <!--                                       value="-->
+                                <?php //echo $sVal['CategoryName']; ?><!--" class="input-small">-->
+
+
+                                <div class="cat-merge">
+
+
+                                    <?php
+
+                                    foreach ($sVal['translations'] as $tSKey => $tSVal) {
+                                        ?>
+                                        <input type="text" value="<?php echo $tSVal['Value']; ?>"
+                                               id="subCatVal_<?php echo $tSVal['CategoryId']."_".$tSVal['LangId']; ?>"
+                                               placeholder="Category Name <?php echo $tSVal['LangIso']; ?>"
+                                               class="input-large main-category-in">
+                                        <?php
+                                    }
+
+                                    ?>
+                                </div>
+
+
+                                <div class="cat-merge">
+                                    <?php
+
+                                    foreach ($sVal['translations'] as $tSKey => $tSVal) {
+                                        ?>
+                                        <textarea id="subCatDesc_<?php echo $tSVal['CategoryId']."_".$tSVal['LangId']; ?>"
+                                                  placeholder="Description <?php echo $tSVal['LangIso']; ?>"
+                                                  class="input-large main-category-in"><?php echo $tSVal['PackageDescription']; ?></textarea>
+                                        <?php
+                                    }
+                                    ?>
+
+                                </div>
+
 
                                 <button type="button" class="deleteCategory btn btn-minier btn-danger"
                                         data-catname="<?php echo $sVal['CategoryName']; ?>"
@@ -173,6 +270,86 @@
         }
 
 
+        $(".editMainCategory").click(function () {
+            var categoryId = $(this).attr("data-category");
+
+            if (categoryId) {
+
+
+                var formdata = new FormData();
+                //formdata.append("file1[]", file);
+
+
+                var ins = _("filemc"+categoryId).files.length;
+
+                for (var x = 0; x < ins; x++) {
+                    formdata.append("file1[]", _("filemc"+categoryId).files[x]);
+
+                    //fd.append("fileToUpload[]", document.getElementById('fileToUpload').files[x]);
+                }
+
+                formdata.append("categoryId", categoryId);
+
+                formdata.append("categoryNames[1][name]", _("catVal_" + categoryId+"_1").value);
+                formdata.append("categoryNames[2][name]", _("catVal_" + categoryId+"_2").value);
+                formdata.append("categoryNames[3][name]", _("catVal_" + categoryId+"_3").value);
+
+                formdata.append("categoryNames[1][description]", _("catDesc_" + categoryId+"_1").value);
+                formdata.append("categoryNames[2][description]", _("catDesc_" + categoryId+"_2").value);
+                formdata.append("categoryNames[3][description]", _("catDesc_" + categoryId+"_3").value);
+
+
+                var ajax = new XMLHttpRequest();
+                ajax.upload.addEventListener("progress", progressHandler, false);
+                ajax.addEventListener("load", completeHandlerEdit, false);
+                ajax.addEventListener("error", errorHandler, false);
+                ajax.addEventListener("abort", abortHandler, false);
+                //ajax.open("POST", "file_upload_parser.php")
+                ajax.open("POST", "<?php echo site_url()?>categoriesmanager/AjaxSetCategory");
+                ajax.send(formdata);
+
+
+
+
+
+                /*
+
+                 var subCatNameEN = $("#catVal_" + categoryId+"_1").val();
+                 var subCatNameDE = $("#catVal_" + categoryId+"_2").val();
+                 var subCatNameRU = $("#catVal_" + categoryId+"_3").val();
+
+                 var subCatDescEN = $("#catDesc_" + categoryId+"_1").val();
+                 var subCatDescDE = $("#catDesc_" + categoryId+"_2").val();
+                 var subCatDescRU = $("#catDesc_" + categoryId+"_3").val();
+
+                 var fd = {
+                 "categoryId": categoryId,
+                 "categoryNames": {
+                 "1": {"name": subCatNameEN, "description": subCatDescEN},
+                 "2": {"name": subCatNameDE, "description": subCatDescDE},
+                 "3": {"name": subCatNameRU, "description": subCatDescRU}
+                 }
+                 };
+
+
+
+                 //catVal_
+
+                 $.ajax({
+                 url: "<?php echo base_url();?>categoriesmanager/AjaxSetCategory",
+                 data: fd,
+                 type: "post"
+                 }).done(function (response) {
+                 location.reload();
+                 });
+                 */
+
+
+            }
+
+        });
+
+
         function progressHandler(event) {
             _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes"; // of"+event.total;
             var percent = (event.loaded / event.total) * 100;
@@ -201,6 +378,9 @@
              });*/
 
         }
+        function completeHandlerEdit(event) {
+            location.reload();
+        }
 
         function errorHandler(event) {
             _("status").innerHTML = "Upload Problem";
@@ -226,31 +406,42 @@
 //
 //
 //        });
-        $(".editMainCategory").click(function () {
-            var categoryId = $(this).attr("data-category");
 
-            if (categoryId) {
-                var catNewName = $("#cat_" + categoryId).val();
-
-
-                alert(catNewName);
-
-            }
-
-        });
 
         $("body").on("click", ".editSubCategory", function () {
             var categoryId = $(this).attr("data-category");
 
             if (categoryId) {
-                var catNewName = $("#cat_" + categoryId).val();
+                //var catNewName = $("#cat_" + categoryId).val();
+
+
+                var subCatNameEN = $("#subCatVal_" + categoryId+"_1").val();
+                var subCatNameDE = $("#subCatVal_" + categoryId+"_2").val();
+                var subCatNameRU = $("#subCatVal_" + categoryId+"_3").val();
+
+                var subCatDescEN = $("#subCatDesc_" + categoryId+"_1").val();
+                var subCatDescDE = $("#subCatDesc_" + categoryId+"_2").val();
+                var subCatDescRU = $("#subCatDesc_" + categoryId+"_3").val();
+
+                var fd = {
+                    "categoryId": categoryId,
+                    "categoryNames": {
+                        "1": {"name": subCatNameEN, "description": subCatDescEN},
+                        "2": {"name": subCatNameDE, "description": subCatDescDE},
+                        "3": {"name": subCatNameRU, "description": subCatDescRU}
+                    }
+                };
+
+
+
+                //catVal_
 
                 $.ajax({
-                    url: "<?php echo base_url();?>categoriesmanager/AjaxSetSubCategory",
-                    data: {categoryId: categoryId, categoryName: catNewName},
+                    url: "<?php echo base_url();?>categoriesmanager/AjaxSetCategory",
+                    data: fd,
                     type: "post"
                 }).done(function (response) {
-                    console.log(response);
+                    location.reload();
                 });
             }
         });
@@ -292,25 +483,13 @@
                 var catNewDescRU = $("#addSubCategoryDesc3_" + parentCategoryId).val();
 
                 var fd = {
-                    "categoryId":parentCategoryId,
+                    "categoryId": parentCategoryId,
                     "categoryNames": {
                         "1": {"name": catNewNameEN, "description": catNewDescEN},
                         "2": {"name": catNewNameDE, "description": catNewDescDE},
                         "3": {"name": catNewNameRU, "description": catNewDescRU}
                     }
                 };
-
-
-//                fd = {categoryNames:{1:"names"}}}
-//
-//                    [name]}
-//                "categoryNames[1][name]", _("addNewCategoryName1").value);
-//                formdata.append("categoryNames[2][name]", _("addNewCategoryName2").value);
-//                formdata.append("categoryNames[3][name]", _("addNewCategoryName3").value);
-//
-//                formdata.append("categoryNames[1][description]", _("addNewCategoryDescription1").value);
-//                formdata.append("categoryNames[2][description]", _("addNewCategoryDescription2").value);
-//                formdata.append("categoryNames[3][description]", _("addNewCategoryDescription3").value);
 
 
                 $.ajax({
@@ -321,13 +500,18 @@
                     console.log(response);
                     if (response.resultId.categoryId > 0) {
                         var insertedId = response.resultId.categoryId;
-                        $("#subTree_" + parentCategoryId).append(
-                            '<li> <input type="text" id="cat_' + insertedId + '" value="' + catNewName + '" class="input-small">' +
-                            '<button type="button" class="deleteCategory btn btn-minier btn-danger" data-category="' + insertedId + '">&times;</button>' +
-                            '<button type="button" class="editSubCategory btn btn-minier btn-success"  data-category="' + insertedId + '">' +
-                            '<i class="icon-pencil bigger-125"></i>' +
-                            '</button>' +
-                            '</li>');
+
+                        if(insertedId > 0){
+                            location.reload();
+                        }
+
+//                        $("#subTree_" + parentCategoryId).append(
+//                            '<li> <input type="text" id="cat_' + insertedId + '" value="' + catNewName + '" class="input-small">' +
+//                            '<button type="button" class="deleteCategory btn btn-minier btn-danger" data-category="' + insertedId + '">&times;</button>' +
+//                            '<button type="button" class="editSubCategory btn btn-minier btn-success"  data-category="' + insertedId + '">' +
+//                            '<i class="icon-pencil bigger-125"></i>' +
+//                            '</button>' +
+//                            '</li>');
 
                     }
                 });

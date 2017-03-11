@@ -21,13 +21,79 @@ class Categoriesmanager extends CI_Controller
         $this->load->view('main_tpl', $this->td);
     }
 
+    /*
+        public function AjaxSetSubCategory()
+        {
+            json_header();
 
-    public function AjaxSetSubCategory()
+            $incomeData = $this->input->post(null, true);
+            $subCategoryName = $incomeData['categoryNames']['1']['name'];
+
+            $CategoryId = $this->input->post('categoryId', true);
+
+            $setResult = $this->categoriessvc_model->SetCategory($subCategoryName, 0, '', $CategoryId);
+
+            foreach ($incomeData['categoryNames'] as $key => $val) {
+                $this->categoriessvc_model->SetCategoryTranslation($setResult['categoryId'], $val['name'], $val['description'], $key);
+            }
+
+
+            echo json_encode(array('resultId' => $setResult));
+        }*/
+
+    public function AjaxSetCategory()
     {
         json_header();
-        $subCategoryName = $this->input->post('categoryName', true);
+
+        $imageDir = '';
+
+        if (isset($_FILES["file1"]) && $_FILES["file1"]["name"][0] != '') {
+
+            $lnkDir = "/cdn/categories/";
+            $filesDir = $_SERVER['DOCUMENT_ROOT'] . "/travelite" . $lnkDir;   //"C:\\inetpub\\wwwroot\\cdn.barami.us\\vinimages\\ufwp\\";
+
+
+            if (!file_exists($filesDir)) {
+                mkdir($filesDir, 0777, true);
+            }
+
+
+            $finalDir = $filesDir;
+
+
+            $i = 0;
+            foreach ($_FILES["file1"]['tmp_name'] as $key => $val) {
+
+                if (resize_image($val, 1599, 640, $finalDir, $_FILES["file1"]['name'][$key], false)) {
+
+                } else {
+                    echo json_encode(array('Code' => 1, 'Messsage' => 'File Upload Error'));
+                    exit();
+                }
+
+                $i++;
+            }
+
+            $imageDir = $lnkDir . $_FILES["file1"]['name'][0];
+
+        }
+
+
         $CategoryId = $this->input->post('categoryId', true);
-        $setResult = $this->categoriessvc_model->SetCategory($subCategoryName, 0, '', $CategoryId);
+
+        if ($CategoryId) {
+
+            $incomeData = $this->input->post(null, true);
+            $subCategoryName = $incomeData['categoryNames']['1']['name'];
+
+
+            $setResult = $this->categoriessvc_model->SetCategory($subCategoryName, 0, $imageDir, $CategoryId);
+
+            foreach ($incomeData['categoryNames'] as $key => $val) {
+                $this->categoriessvc_model->SetCategoryTranslation($setResult['categoryId'], $val['name'], $val['description'], $key);
+            }
+        }
+
         echo json_encode(array('resultId' => $setResult));
     }
 
@@ -35,7 +101,6 @@ class Categoriesmanager extends CI_Controller
     {
         json_header();
         $incomeData = $this->input->post(null, true);
-        //$subCategoryName = $this->input->post('categoryName', true);
 
         $subCategoryName = $incomeData['categoryNames']['1']['name'];
 
@@ -96,7 +161,6 @@ class Categoriesmanager extends CI_Controller
 
             if (!file_exists($filesDir)) {
                 mkdir($filesDir, 0777, true);
-                //  mkdir($filesDir.$thumb, 0777, true);
             }
 
 

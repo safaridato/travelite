@@ -18,18 +18,47 @@ class Categoriessvc_model extends CI_Model
 
         $fullCategoriesList = array();
 
-        foreach ($returnResult as $key => $val) {
 
-            $query = "call GetSubcategoriesAdmin(" . $val['Id'] . ", 0);";
-            $resultSubs = $this->db->query($query);
-            $returnResultSubs = $resultSubs->result_array();
-            $resultSubs->next_result();
+        if(!empty($returnResult)){
 
-            $fullCategoriesList[$val['Id']] = array('categories' => $val, 'subs' => $returnResultSubs);
+
+
+
+
+            foreach ($returnResult as $key => $val) {
+
+                $val['translations'] = $this->_GetCategoryTranslations($val['Id']);
+
+                $query = "call GetSubcategoriesAdmin(" . $val['Id'] . ", 0);";
+                $resultSubs = $this->db->query($query);
+                $returnResultSubs = $resultSubs->result_array();
+                $resultSubs->next_result();
+
+
+                foreach ($returnResultSubs as $sKey=>$sVal) {
+
+                    $returnResultSubs[$sKey]['translations'] = $this->_GetCategoryTranslations($sVal['Id']);
+
+
+                }
+
+
+                $fullCategoriesList[$val['Id']] = array('categories' => $val, 'subs' => $returnResultSubs);
+            }
         }
+
+
 
         return $fullCategoriesList;
 
+    }
+
+    protected function _GetCategoryTranslations($categoryId = 0){
+        $query = "call GetCategoryTranslations(".$categoryId.")";
+        $result = $this->db->query($query);
+        $returnResult = $result->result_array();
+        $result->next_result();
+        return $returnResult;
     }
 
 

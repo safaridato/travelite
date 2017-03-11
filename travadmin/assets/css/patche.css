@@ -35,14 +35,14 @@ input.error{
 
 .categoriesTree{
     display: block;
-    width: 400px;
+    width: 100%;
     float: left;
     padding: 0;
     margin: 0;
 }
 
 .categoriesTree li{
-    width: 350px;
+    width: 100%;
     padding: 5px;
     float: left;
     display: block;

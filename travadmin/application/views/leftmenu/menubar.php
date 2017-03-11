@@ -44,6 +44,12 @@
         <span class="menu-text"> Tours </span>
     </a>
 </li>
+<li>
+    <a href="<?php echo base_url();?>categoriesmanager">
+        <i class="icon-text-width"></i>
+        <span class="menu-text"> Categories </span>
+    </a>
+</li>
 <!---->
 <!--<li>-->
 <!--    <a href="--><?php //echo base_url();?><!--usersmanager">-->
