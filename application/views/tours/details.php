@@ -67,11 +67,11 @@
                             <h4 class="widget-title">Need Help For Booking?</h4>
                             <div class="widgett text_widget">
                                 <p>There are many variations of passages of Lorem Ipsum available, but the joy have </p>
-                                <h3><i class="fa fa-phone"></i>1-669-559-4378</h3>
-                                <h5>or</h5>
-                                <button type="submit" value="submit query" class="submit_query btn-yellow btns">
-                                    submit query
-                                </button>
+                                <h3><i class="fa fa-phone"></i>+995 593 651 832</h3>
+<!--                                <h5>or</h5>-->
+<!--                                <button type="submit" value="submit query" class="submit_query btn-yellow btns">-->
+<!--                                    submit query-->
+<!--                                </button>-->
 
                             </div>
 
