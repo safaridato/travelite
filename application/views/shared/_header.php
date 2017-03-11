@@ -135,9 +135,6 @@
                             <li class="active"><a href="<?php echo base_url(); ?>"><?php echo lang('tpl_home'); ?></a>
                             </li>
                             <li><a href="<?php echo base_url(); ?>tours"><?php echo lang('tpl_tours'); ?></a>
-                                <?php
-                                //print_r(categories_menu())
-                                ?>
 
                                 <ul class="sub-menu">
 
@@ -146,28 +143,36 @@
                                     if (!empty($cats)) {
                                         foreach ($cats as $key => $val) {
                                             ?>
-                                            <li>
-                                                <a href="<?php echo base_url()."tours/index/".$val['cats']['Id'];?>"><?php echo $val['cats']['CategoryName']; ?></a>
-                                            </li>
-                                            <?php
-                                            if (!empty($val['cats']['subs'])) {
+                                            <li <?php !empty($val['subs']) ? print "class='travel_dropdown'" : ""; ?>>
+                                                <a href="<?php echo base_url() . "tours/index/" . $val['cats']['Id']; ?>"><?php echo $val['cats']['CategoryName']; ?></a>
 
-                                                ?>
-                                                <ul class="sub-menu">
-                                                    <?php
-                                                    foreach ($val['cats']['subs'] as $sKey => $sVal) {
-                                                        ?>
-                                                        <li>
-                                                            <a href="<?php echo base_url()."tours/index/".$sVal['Id'];?>"><?php echo $sVal['CategoryName']; ?></a>
-                                                        </li>
+                                                <?php
 
+                                                if (!empty($val['subs'])) {
+
+                                                    ?>
+                                                    <ul class="sub-menu">
                                                         <?php
 
-                                                    }
-                                                    ?>
-                                                </ul>
-                                                <?php
-                                            }
+                                                        foreach ($val['subs'] as $sKey => $sVal) {
+                                                            ?>
+                                                            <li>
+                                                                <a href="<?php echo base_url() . "tours/index/" . $sVal['Id']; ?>"><?php echo $sVal['CategoryName']; ?></a>
+                                                            </li>
+
+                                                            <?php
+
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                    <?php
+                                                }
+                                                ?>
+
+
+                                            </li>
+                                            <?php
+
 
                                         }
                                     }
