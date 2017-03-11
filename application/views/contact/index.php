@@ -2,7 +2,7 @@
 <!--content body start-->
 <div id="content_wrapper">
     <!--page title start-->
-    <div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(http://placehold.it/1599x640);">
+    <div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url('<?php echo base_url();?>assets/images/page_title_bg.jpg');">
         <ul>
             <li><a href="javascript:;">contact us</a></li>
         </ul>

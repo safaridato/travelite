@@ -11,3 +11,24 @@ if (!function_exists('cvf')) {
         return $view != false ? $classFolder . "/" . $view : $classFolder."/index";
     }
 }
+
+
+
+
+if (!function_exists('SetActive')) {
+
+    function SetActive($className = '', $htmlClass = "active")
+    {
+        $CI =& get_instance();
+        $class = $CI->router->class;
+
+        if($class == $className){
+            return $htmlClass;
+        }
+
+        return "";
+    }
+}
+
+
+

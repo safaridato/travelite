@@ -132,9 +132,8 @@
                 <div class="col-md-10 col-sm-10"><a href="javascript:;" class="menu-toggle"></a>
                     <div class="main_menu">
                         <ul>
-                            <li class="active"><a href="<?php echo base_url(); ?>"><?php echo lang('tpl_home'); ?></a>
-                            </li>
-                            <li><a href="<?php echo base_url(); ?>tours"><?php echo lang('tpl_tours'); ?></a>
+                            <li class="<?php echo SetActive("home");?>"><a href="<?php echo base_url(); ?>"><?php echo lang('tpl_home'); ?></a></li>
+                            <li class="<?php echo SetActive("tours");?>"><a href="<?php echo base_url(); ?>tours"><?php echo lang('tpl_tours'); ?></a>
 
                                 <ul class="sub-menu">
 
@@ -198,14 +197,9 @@
                                     <!--                                    <li><a href="Tour-Packages-List-View.html">tour-packages-list-view</a></li>-->
                                 </ul>
                             </li>
-                            <!--                            <li><a href="-->
-                            <?php //echo base_url();
-                            ?><!--tours/index/2/themed">-->
-                            <?php //echo lang('tpl_themedtours');
-                            ?><!--</a></li>-->
-                            <li><a href=""><?php echo lang('tpl_attractions'); ?></a></li>
-                            <li><a href="<?php echo base_url(); ?>contact">contact</a></li>
-                            <li><a href="<?php echo base_url(); ?>useful"><?php echo lang('tpl_useful'); ?></a></li>
+                            <li class="<?php echo SetActive("attractions");?>"><a href="<?php echo base_url(); ?>attractions"><?php echo lang('tpl_attractions'); ?></a></li>
+                            <li class="<?php echo SetActive("contact");?>"><a href="<?php echo base_url(); ?>contact">contact</a></li>
+                            <li class="<?php echo SetActive("useful");?>"><a href="<?php echo base_url(); ?>useful"><?php echo lang('tpl_useful'); ?></a></li>
                         </ul>
                     </div>
                 </div>
