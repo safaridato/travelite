@@ -115,25 +115,25 @@
                 <li class="main-category-li category_add_row_<?php echo $val['categories']['Id']; ?>">
                     <div>
                         <input type="text" name="subCategory[]" placeholder="SubCategory Name EN"
-                               class="addNewSubCategory input-medium "
+                               class="addNewSubCategory input-large "
                                id="addSubCategoryName1_<?php echo $val['categories']['Id']; ?>">
 
                         <input type="text" name="subCategory[]" placeholder="SubCategory Name DE"
-                               class="addNewSubCategory input-medium "
+                               class="addNewSubCategory input-large "
                                id="addSubCategoryName2_<?php echo $val['categories']['Id']; ?>">
 
                         <input type="text" name="subCategory[]" placeholder="SubCategory Name RU"
-                               class="addNewSubCategory input-medium "
+                               class="addNewSubCategory input-large "
                                id="addSubCategoryName3_<?php echo $val['categories']['Id']; ?>">
 
                         <hr/>
 
 
-                        <textarea placeholder="Description EN" name="subDesc[]"
+                        <textarea placeholder="Description EN" class="input-large" name="subDesc[]"
                                   id="addSubCategoryDesc1_<?php echo $val['categories']['Id']; ?>"></textarea>
-                        <textarea placeholder="Description DE" name="subDesc[]"
+                        <textarea placeholder="Description DE" class="input-large" name="subDesc[]"
                                   id="addSubCategoryDesc2_<?php echo $val['categories']['Id']; ?>"></textarea>
-                        <textarea placeholder="Description RU" name="subDesc[]"
+                        <textarea placeholder="Description RU" class="input-large" name="subDesc[]"
                                   id="addSubCategoryDesc3_<?php echo $val['categories']['Id']; ?>"></textarea>
 
 
