@@ -26,13 +26,23 @@ Version: 1.0.0
     <link href="<?php echo base_url(); ?>assets/css/style-fixes.css" rel="stylesheet" type="text/css"/>
     <!-- end theme style -->
     <!-- favicon links -->
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
-    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="<?php echo base_url();?>favicon.ico"/>
+    <link rel="icon" type="image/ico" href="<?php echo base_url();?>favicon.ico"/>
     <base href="<?php echo angular_base();?>">
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ng/angular.1.6.1.js"></script>
 </head>
 <body class="travel_home">
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-93988009-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 
 <!--Page loading start-->
 <?php //$this->load->view("shared/_loader");?>

@@ -93,6 +93,67 @@ class Mailsend_model extends CI_Model
 
         return false;
     }
+
+    public function SendContactDataLocal($fromEmail = '', $fullName = '', $phone = '', $message = '')
+    {
+
+        if ($fromEmail != '' && $fullName != '' && $message != '') {
+
+            $to = "admin@smartit.ge"; //, delimiter mail list
+            $subject = "Take Off To Georgia";
+
+            $message = "
+            <html>
+<head>
+<title>take off to Georggia Contact Form</title>
+</head>
+<body>
+<p>Contact Email from website</p>
+<table>
+<tr>
+<td>Contact person name:</td><td>" . $fullName . "</td>
+</tr>
+<tr>
+<td>Phone:</td><td>" . $phone . "</td>
+</tr>
+<tr>
+<td>Person Email:</td><td>" . $fromEmail . "</td>
+</tr>
+<tr>
+<td>Message</td><td>" . $message . "</td>
+</tr>
+</table>
+</body>
+</html>";
+
+// Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+            $headers .= 'From: <noreply@takeofftogeorgia.com>' . "\r\n";
+
+            mail($to, $subject, $message, $headers);
+
+        }
+
+        return false;
+    }
+
+    public function SubscribeMailLocal($mail = false)
+    {
+
+
+        $querySubscribe = "CALL Subscribe('" . $mail . "');";
+        $resultSubscribe = $this->db->query($querySubscribe);
+        //$res = $resultSubscribe->result_array();
+        // $resultSubscribe->next_result();
+
+
+        return true;
+
+    }
+
     /*
     public function SendPostPurchase($fromEmail = '', $message = '', $toEmail = '')
         {

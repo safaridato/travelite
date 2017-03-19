@@ -23,7 +23,15 @@ class Home extends CI_Controller
     {
         
         $td = array();
-        $td["content"] = cvf(); //"index";
+
+        $this->load->model("template_model");
+
+       // $td["discountedTours"] = $this->tours_model->GetDiscountedTours();
+        $homeDate = $this->template_model->GetHomeData();
+        $td["discountedTours"] = $homeDate['offers'];
+        $td["slides"] = $homeDate['slides'];
+
+        $td["content"] = cvf(); //"index"; //home/index
         $this->load->view('shared/_layout', $td);
     }
 }

@@ -5,6 +5,8 @@ $lang['tours_perperson'] = 'per person';
 $lang['tours_viewdetails'] = 'View Details';
 $lang['tours_includes'] = 'Includes';
 $lang['tours_moreinformation'] = 'More Information';
+$lang['tours_alltours'] = 'All Tours';
+
 
 
 

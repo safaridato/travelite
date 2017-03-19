@@ -4,6 +4,10 @@
     <div class="clearfix"></div>
 
     <div class="slider_tab_main">
+
+        <?php
+        if (!empty($slides)){
+        ?>
         <!-- Home first slider start -->
         <div class="full_width home_slider">
             <div class="example">
@@ -15,97 +19,110 @@
                         <div id="rev_slider_116_1" class="rev_slider fullwidthabanner" style="display:none;"
                              data-version="5.0.7">
                             <ul style="width:100% !important;">
-                                <!-- SLIDE  -->
-                                <li data-index="rs-391" data-transition="parallaxhorizontal" data-slotamount="default"
-                                    data-easein="default" data-easeout="default" data-masterspeed="default"
-                                    data-rotate="0" data-saveperformance="off" data-title="Smooth Mask"
-                                    data-description="">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="http://placehold.it/1600x1060" alt="slide2"
-                                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                         class="rev-slidebg" data-no-retina>
-                                    <!-- LAYERS -->
 
-                                    <div class="slider_heading_wrap">
-                                        <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption NotGeneric-Title   tp-resizeme"
-                                             id="slide-391-layer-1"
-                                             data-x="680" data-hoffset=""
-                                             data-y="center" data-voffset="-120"
-                                             data-width="['auto','auto','auto','auto']"
-                                             data-height="['auto','auto','auto','auto']"
-                                             data-transform_idle="o:1;"
+                                <?php
+                                $i = 1;
+                                foreach ($slides as $key => $val) {
+                                    ?>
 
-                                             data-transform_in="y:top;s:2000;e:Power4.easeInOut;"
-                                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                             data-start="1000"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-responsive_offset="on" style="text-align:center;">
 
-                                            <div style="font-size:36px; line-height:45px;"
-                                                 class="Travelite_slider_text"> once a year
+                                    <!-- SLIDE  -->
+
+                                    <li data-index="rs-39<?php echo $i; ?>" data-transition="parallaxhorizontal"
+                                        data-slotamount="default"
+                                        data-easein="default" data-easeout="default" data-masterspeed="default"
+                                        data-rotate="0" data-saveperformance="off" data-title="Smooth Mask"
+                                        data-description="">
+                                        <!-- MAIN IMAGE -->
+                                        <img src="<?php echo $val['Image']; ?>" alt="slide2"
+                                             data-bgposition="center center" data-bgfit="cover"
+                                             data-bgrepeat="no-repeat"
+                                             class="rev-slidebg" data-no-retina>
+                                        <!-- LAYERS -->
+
+                                        <div class="slider_heading_wrap">
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption NotGeneric-Title   tp-resizeme"
+                                                 id="slide-39<?php echo $i; ?>-layer-1"
+                                                 data-x="680" data-hoffset=""
+                                                 data-y="center" data-voffset="-120"
+                                                 data-width="['auto','auto','auto','auto']"
+                                                 data-height="['auto','auto','auto','auto']"
+                                                 data-transform_idle="o:1;"
+
+                                                 data-transform_in="y:top;s:2000;e:Power4.easeInOut;"
+                                                 data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                                 data-start="1000"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-responsive_offset="on" style="text-align:center;">
+
+                                                <?php echo $val['Desc'];?>
+
                                             </div>
-                                            <div style="font-size:40px; line-height:45px;"
-                                                 class="Travelite_slider_text"> Go SomePlace
+                                            <!-- LAYER NR. 1 -->
+
+                                            <!-- LAYER NR. 2 -->
+                                            <div class="tp-caption NotGeneric-Title   tp-resizeme"
+                                                 id="slide-39<?php echo $i; ?>-layer-2"
+
+                                                 data-x="680" data-hoffset=""
+                                                 data-y="center" data-voffset="35"
+                                                 data-width="['auto','auto','auto','auto']"
+                                                 data-height="['auto','auto','auto','auto']"
+                                                 data-transform_idle="o:1;"
+
+                                                 data-transform_in="x:right;s:2000;e:Power4.easeInOut;"
+                                                 data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+
+                                                 data-start="2000"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-responsive_offset="on"
+                                            >
+                                                <div class="tour_packages" style="font-size:26px;">
+
+                                                    <?php echo $val['SmallDesc'];?>
+
+
+                                                    <span style="font-size:38px;">$<?php echo $val['Price'];?></span>
+                                                </div>
+
                                             </div>
-                                            <div style="font-size:30px; line-height:45px;"
-                                                 class="Travelite_slider_text"> You’ve Never
+                                            <!-- LAYER NR. 2 -->
+
+                                            <!-- LAYER NR. 3 -->
+                                            <div
+                                                class="slider_buttons tp-caption NotGeneric-Title slideheading  tp-resizeme"
+                                                id="slide-39<?php echo $i; ?>-layer-3" data-x="680" data-y="center"
+                                                data-voffset="80"
+
+
+                                                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                                data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                                data-start="3000"
+                                                data-splitin="none"
+                                                data-splitout="none"
+                                                data-responsive_offset="on"
+                                            >
+                                                <a href="<?php echo $val['Link'];?>" style=" border: 1px solid #fdb714;" class="large_slide_btn"><?php echo lang('tpl_viewmore');?></a>
+<!--                                                <a href="--><?php //echo $val['Link'];?><!--" style=" border: 1px solid #fdb714;" class="large_slide_btn">--><?php //echo lang('tpl_booknow');?><!--</a>-->
+
                                             </div>
-                                            <div style="font-size:48px; line-height:45px;"
-                                                 class="Travelite_slider_text bottom_line_text"> Been Before
-                                            </div>
+                                            <!-- LAYER NR. 3 -->
+
 
                                         </div>
-                                        <!-- LAYER NR. 1 -->
+                                    </li>
 
-                                        <!-- LAYER NR. 2 -->
-                                        <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-391-layer-2"
+                                    <?php
+                                    $i++;
+                                }
 
-                                             data-x="680" data-hoffset=""
-                                             data-y="center" data-voffset="35"
-                                             data-width="['auto','auto','auto','auto']"
-                                             data-height="['auto','auto','auto','auto']"
-                                             data-transform_idle="o:1;"
+                                ?>
 
-                                             data-transform_in="x:right;s:2000;e:Power4.easeInOut;"
-                                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                <?php /*
 
-                                             data-start="2000"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-responsive_offset="on"
-                                        >
-                                            <div class="tour_packages" style="font-size:26px;">Tour Packages Starts@
-                                                <span style="font-size:38px;">$260</span></div>
-
-                                        </div>
-                                        <!-- LAYER NR. 2 -->
-
-                                        <!-- LAYER NR. 3 -->
-                                        <div
-                                            class="slider_buttons tp-caption NotGeneric-Title slideheading  tp-resizeme"
-                                            id="slide-391-layer-3" data-x="680" data-y="center" data-voffset="80"
-
-
-                                            data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                                            data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                            data-start="3000"
-                                            data-splitin="none"
-                                            data-splitout="none"
-                                            data-responsive_offset="on"
-                                        >
-                                            <a href="#" style=" border: 1px solid #fdb714;" class="large_slide_btn">View
-                                                more</a>
-                                            <a href="#" style=" border: 1px solid #fdb714;" class="large_slide_btn">book
-                                                now</a>
-
-                                        </div>
-                                        <!-- LAYER NR. 3 -->
-
-
-                                    </div>
-                                </li>
                                 <!--slide-->
                                 <li data-index="rs-392" data-transition="parallaxhorizontal" data-slotamount="default"
                                     data-easein="default" data-easeout="default" data-masterspeed="default"
@@ -194,16 +211,23 @@
                                     </div>
                                 </li>
                                 <!--slide-->
+
+                                */
+                                ?>
+
                             </ul>
                         </div>
                     </div>
                     <!-- END REVOLUTION SLIDER -->
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <!-- section end -->
         </div>
         <!-- Home first slider End -->
-
+        <?php /*
         <div class="Travelite_slider_menus">
             <div class="container">
                 <div class="slider_menus">
@@ -219,173 +243,125 @@
 
 
         </div>
+        */
+        ?>
     </div><!-- slider main wrapper end -->
 
+    <?php
+    /*
+    ?>
+        <!-- feature section start -->
+        <div class="full_width Travelite_feature_section">
+            <div class="container">
+                <div class="row">
 
-    <!-- feature section start -->
-    <div class="full_width Travelite_feature_section">
-        <div class="container">
-            <div class="row">
 
-
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="feature_box_second">
-                        <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
-                        <div class="feature_overlay_second">
-                            <div class="bottom_first"><a href="Tour-Packages-Details.html">Australia</a><span>(770 Places)</span>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="feature_box_second">
+                            <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
+                            <div class="feature_overlay_second">
+                                <div class="bottom_first"><a href="Tour-Packages-Details.html">Australia</a><span>(770 Places)</span>
+                                </div>
+                                <div class="bottom_second">start from <span>$350</span></div>
                             </div>
-                            <div class="bottom_second">start from <span>$350</span></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="feature_box_second">
-                        <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
-                        <div class="feature_overlay_second">
-                            <div class="bottom_first"><a
-                                    href="Tour-Packages-Details.html">greece</a><span>(520 Places)</span></div>
-                            <div class="bottom_second">start from <span>$550</span></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="feature_box_second">
+                            <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
+                            <div class="feature_overlay_second">
+                                <div class="bottom_first"><a
+                                        href="Tour-Packages-Details.html">greece</a><span>(520 Places)</span></div>
+                                <div class="bottom_second">start from <span>$550</span></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="feature_box_second">
-                        <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
-                        <div class="feature_overlay_second">
-                            <div class="bottom_first"><a
-                                    href="Tour-Packages-Details.html">paris</a><span>(350 Places)</span></div>
-                            <div class="bottom_second">start from <span>$350</span></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="feature_box_second">
+                            <img src="http://placehold.it/270x264" class="img-responsive" alt="feature">
+                            <div class="feature_overlay_second">
+                                <div class="bottom_first"><a
+                                        href="Tour-Packages-Details.html">paris</a><span>(350 Places)</span></div>
+                                <div class="bottom_second">start from <span>$350</span></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class="end_box_fearure">
-                        <h3 class="Travelite_heading_feature">top destination</h3>
-                        <p>Create stunning pages with our powerful admin </p>
-                        <div><a href="#" class="black_btn">view more</a></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="end_box_fearure">
+                            <h3 class="Travelite_heading_feature">top destination</h3>
+                            <p>Create stunning pages with our powerful admin </p>
+                            <div><a href="#" class="black_btn">view more</a></div>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
-    <!-- feature section end -->
+        <!-- feature section end -->
 
-    <!--  special offer section start -->
-    <div class="full_width Travelite_world_section">
-        <div class="container">
-            <div class="row">
+        <?php
+        */
+    ?>
 
-                <div class="heading_team">
-                    <h3>Special offers</h3>
-                    <p>Create stunning pages with our powerful admin panel. Functionality and usability combine.
-                        Travelllers Deals and Offers on Hotels, Vacation Packages, Flights, Cruises and Car Rentals</p>
-                </div>
+    <?php
+    if (!empty($discountedTours)) {
+        ?>
 
-                <!-- first ractangle start -->
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class=" full_width offer_box_wrapper">
-                        <div class="circle_icon">
-                            90%
-                            <span>off</span>
-                        </div>
-                        <div class="img_overlay_wrapper">
-                            <img src="http://placehold.it/270x260" class="img-responsive" alt="offer">
-                            <div class="img_overlay">
-                            </div>
-                        </div>
-                        <div class="full_width offer_inner">
-                            <h4>winter paradise</h4>
-                            <p>(120 Places)</p>
-                            <div class="overlay_btn">
-                                <a href="#" class="green_btn">See all</a>
-                            </div>
+        <!--  special offer section start -->
+        <div class="full_width Travelite_world_section">
+            <div class="container">
+                <div class="row">
 
-                        </div>
+                    <div class="heading_team">
+                        <h3><?php echo lang('tpl_specialoffers'); ?></h3>
+                        <p><?php echo lang('tpl_specialoffersDesc'); ?></p>
                     </div>
-                </div>
-                <!-- first ractangle End -->
 
-                <!-- second ractangle start -->
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class=" full_width offer_box_wrapper">
-                        <div class="circle_icon">
-                            90%
-                            <span>off</span>
-                        </div>
-                        <div class="img_overlay_wrapper">
-                            <img src="http://placehold.it/270x260" class="img-responsive" alt="offer">
-                            <div class="img_overlay">
+                    <?php
+                    foreach ($discountedTours as $key => $val) {
+                        ?>
+                        <!-- first ractangle start -->
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class=" full_width offer_box_wrapper">
+                                <div class="circle_icon">
+                                    <?php echo number_format($val['DiscountValue'], 0); ?>%
+                                    <span>off</span>
+                                </div>
+                                <div class="img_overlay_wrapper">
+                                    <img src="<?php echo $val['ThumbImage']; ?>" class="img-responsive" alt="offer">
+                                    <div class="img_overlay">
+                                    </div>
+                                </div>
+                                <div class="full_width offer_inner">
+                                    <h4><?php echo $val['TourName']; ?></h4>
+                                    <!--                                    <p>(120 Places)</p>-->
+                                    <div class="overlay_btn">
+                                        <a href="<?php echo base_url() . "tours/details/" . $val['Id']; ?>"
+                                           class="green_btn"><?php echo lang('tours_viewdetails'); ?></a>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="full_width offer_inner">
-                            <h4>Summer Paradise</h4>
-                            <p>(120 Places)</p>
-                            <div class="overlay_btn">
-                                <a href="#" class="green_btn">See all</a>
-                            </div>
+                        <!-- first ractangle End -->
 
-                        </div>
+                        <?php
+                    }
+                    ?>
+
+                    <div class="full_width destination_button">
+                        <a href="<?php echo base_url() . "tours/"; ?>"
+                           class="black_btn feature_more_btn"><?php echo lang('tours_alltours'); ?></a>
                     </div>
-                </div>
-                <!-- second ractangle End -->
-                <!-- thired ractangle start -->
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class=" full_width offer_box_wrapper">
-                        <div class="circle_icon">
-                            90%
-                            <span>off</span>
-                        </div>
-                        <div class="img_overlay_wrapper">
-                            <img src="http://placehold.it/270x260" class="img-responsive" alt="offer">
-                            <div class="img_overlay">
-                            </div>
-                        </div>
-                        <div class="full_width offer_inner">
-                            <h4>camping paradise</h4>
-                            <p>(120 Places)</p>
-                            <div class="overlay_btn">
-                                <a href="#" class="green_btn">See all</a>
-                            </div>
 
-                        </div>
-                    </div>
                 </div>
-                <!-- thired ractangle End -->
-                <!-- fourth ractangle start -->
-                <div class="col-lg-3 col-md-3 col-sm-6">
-                    <div class=" full_width offer_box_wrapper">
-                        <div class="circle_icon">
-                            90%
-                            <span>off</span>
-                        </div>
-                        <div class="img_overlay_wrapper">
-                            <img src="http://placehold.it/270x260" class="img-responsive" alt="offer">
-                            <div class="img_overlay">
-                            </div>
-                        </div>
-                        <div class="full_width offer_inner">
-                            <h4>vacation paradise</h4>
-                            <p>(120 Places)</p>
-                            <div class="overlay_btn">
-                                <a href="#" class="green_btn">See all</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- fourth ractangle End -->
-
-                <div class="full_width destination_button">
-                    <a href="#" class="black_btn feature_more_btn">more destination</a>
-                </div>
-
             </div>
         </div>
-    </div>
-    <!--  special offer section End -->
-
+        <!--  special offer section End -->
+        <?php
+    }
+    ?>
     <!-- video section start -->
     <div class="full_width home_video_section">
         <div class="video_overlay">
@@ -484,7 +460,7 @@
         </div>
     </div>
     <!-- subscribe section End -->
- */?>
+ */ ?>
 </div>
 
 

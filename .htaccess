@@ -1,3 +1,16 @@
+#Order Deny,Allow
+#Deny from all
+##Allow from 31.192.27.149
+#
+#
+#ErrorDocument 403 /maintenance.html
+##<FilesMatch  "^(maintenance.html|video.mp4|video.webmhd.webm|video-js.css|video.js|jquery-2.1.4.min.js)$">
+#<FilesMatch  "^(maintenance.html)$">
+#Order Allow,Deny
+#Allow from all
+#</FilesMatch>
+
+
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -24,4 +24,16 @@ class Sendsvc extends CI_Controller
         echo json_encode(array('Code' => 0, 'Status' => 'Success'));
 
     }
+
+    public function Subscribe()
+    {
+
+        $contactMail = $this->input->post('mail', true);
+        if ($contactMail != '') {
+            $this->load->model('mailsend_model');
+            $this->mailsend_model->SubscribeMailLocal($contactMail);
+        }
+
+        echo json_encode(array('Code' => 0, 'Status' => 'Success'));
+    }
 }

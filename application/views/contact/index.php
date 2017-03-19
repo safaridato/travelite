@@ -27,13 +27,19 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="conatact_form_ds">
-                        <form>
+                        <div id="sent-status" style="display: none;">
+                            <h2><?php echo lang('tpl_messagesent');?></h2>
+                        </div>
+                        <form method="post" action="<?php echo base_url();?>contact">
                             <input type="text" name="name" placeholder="Name" class="input_c" required="required">
                             <input type="email" name="email" placeholder="Email" class="input_c" required="required">
                             <input type="text" name="phone" placeholder="Phone" class="input_c" required="required">
-                            <textarea class="text_area_c" placeholder="Message" name="msgs"></textarea>
+                            <textarea class="text_area_c" placeholder="Message" name="msgs" required="required"></textarea>
                             <input type="submit" value="Send" class="btn_green" id="form_submit">
+
+                            <?php echo validation_errors(); ?>
                         </form>
+                        
 
                     </div>
 
@@ -102,4 +108,23 @@
 
 </div>
 <!--content body end-->
-  
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var showMsg = '<?php echo $sentstatus;?>';
+
+        if(showMsg == 1){
+            $("#sent-status").show();
+
+            setTimeout(function(){
+                $("#sent-status").hide();
+            }, 3000);
+        }
+
+
+
+
+    })
+</script>

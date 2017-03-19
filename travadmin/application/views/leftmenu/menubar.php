@@ -55,6 +55,24 @@
                 <span class="menu-text"> Content Pages </span>
             </a>
         </li>
+        <li>
+            <a href="<?php echo base_url(); ?>tagsmanager">
+                <i class="icon-file-alt"></i>
+                <span class="menu-text"> Tags</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>slidesmanager">
+                <i class="icon-file-alt"></i>
+                <span class="menu-text"> Slides</span>
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>bookingmanager">
+                <i class="icon-file-alt"></i>
+                <span class="menu-text"> Booking</span>
+            </a>
+        </li>
         <!---->
         <!--<li>-->
         <!--    <a href="--><?php //echo base_url();?><!--usersmanager">-->

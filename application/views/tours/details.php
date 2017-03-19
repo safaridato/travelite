@@ -236,14 +236,9 @@
 
                                 <p ng-bind-html="prepHtml(tourDetails.Details.FullReview)"></p>
 
-                                <div class="inner_content">
-                                    <div class="day_title">Day 1</div>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the joy have
-                                        suffered alteration in some format, by injected humour. There are many
-                                        variations of
-                                        passages of Lorem Ipsum available, but the joy have suffered alteration in some
-                                        format, by injected humour.
-                                    </p>
+                                <div class="inner_content" ng-repeat="day in tourDetails.Days">
+                                    <div class="day_title">Day {{day.TourDayNumber}}</div>
+                                    <p>{{day.Description}}</p>
                                 </div>
 
 

@@ -32,3 +32,17 @@ if (!function_exists('SetActive')) {
 
 
 
+
+
+if (!function_exists('tags')) {
+    function tags()
+    {
+        $CI =&get_instance();
+
+        $CI->load->model('template_model');
+        $tags = $CI->template_model->GetTags();
+
+        return $tags;
+    }
+}
+

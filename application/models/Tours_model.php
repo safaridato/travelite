@@ -21,7 +21,6 @@ class Tours_model extends CI_Model
         $result->next_result();
 
 
-
         foreach ($categories as $key => $val) {
 
             $queryBundles = "CALL GetCategories(" . lang_id() . "," . $val['Id'] . ");";
@@ -53,6 +52,17 @@ class Tours_model extends CI_Model
         return $categoryResult;
     }
 
+    public function GetDiscountedTours()
+    {
+        $query = "CALL GetDiscountedTours(" . lang_id() . ");";
+
+        $result = $this->db->query($query);
+        $dToursResult = $result->result_array();
+        $dTours = $dToursResult;
+        $result->next_result();
+
+        return $dTours;
+    }
 
     public
     function GetToursList()
@@ -116,8 +126,16 @@ class Tours_model extends CI_Model
             $serviceResult = $resultService->result_array();
             $resultService->next_result();
 
+
+            //day packages
+            $queryDays = "CALL GetTourDays(" . $id . "," . lang_id() . ");";
+            $resultDays = $this->db->query($queryDays);
+            $daysResult = $resultDays->result_array();
+            $resultDays->next_result();
+
+
             //$tourResult[0]["FullReview"] = htmlspecialchars_decode($tourResult[0]["FullReview"]);
-            $tourDetails = array('Details' => $tourResult[0], 'Pics' => $picsResult, 'Bundles' => $bundlesResult, 'Services' => $serviceResult);
+            $tourDetails = array('Details' => $tourResult[0], 'Pics' => $picsResult, 'Bundles' => $bundlesResult, 'Services' => $serviceResult, 'Days' => $daysResult);
         }
 
 
