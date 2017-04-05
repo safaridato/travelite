@@ -13,7 +13,7 @@
             <th>ID</th>
             <th>Tour Name</th>
             <th>Price</th>
-            <th class="hidden-480">Main Category</th>
+            <th class="hidden-480">Days</th>
             <th class="hidden-phone">
                 <i class="icon-time bigger-110 hidden-phone"></i>
                 Created
@@ -27,6 +27,27 @@
         </thead>
         <tbody>
 
+        <?php
+        foreach ($tours as $key => $val) {
+            ?>
+            <tr>
+                <td><?php echo $val['Id']; ?></td>
+                <td><?php echo $val['TourName']; ?></td>
+                <th><?php echo $val['Price']; ?></th>
+                <th class="hidden-480"><?php echo $val['DaysCount']; ?></th>
+                <th class="hidden-phone">
+                    <i class="icon-time bigger-110 hidden-phone"></i>
+                    <?php echo $val['CreateDate']; ?>
+                </th>
+                <th class="hidden-phone">
+                    <i class="icon-time bigger-110 hidden-phone"></i>
+                    <?php echo $val['Status']; ?>
+                </th>
+                <th><a href="/travadmin/toursmanager/edit/<?php echo $val['Id']; ?>">Edit</a> </th>
+            </tr>
+            <?php
+        }
+        ?>
 
         </tbody>
     </table>

@@ -1,6 +1,6 @@
 <?php
 
-if (!in_array($_SERVER['REMOTE_ADDR'], array("94.100.229.254","109.238.228.85","213.131.34.218","31.192.27.149","92.98.148.100")) && $_SERVER['HTTP_X_REQUESTED_WITH'] == null){
+if (!in_array($_SERVER['REMOTE_ADDR'], array("94.100.229.254","109.238.228.85","213.131.34.218","31.192.27.149","92.98.148.100","77.242.56.175","94.240.216.53")) && $_SERVER['HTTP_X_REQUESTED_WITH'] == null){
     //echo $_SERVER['REMOTE_ADDR'];
     include "maintenance.html";
 

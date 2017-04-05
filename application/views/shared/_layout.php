@@ -15,11 +15,10 @@ Version: 1.0.0
 <head>
     <meta charset="utf-8"/>
     <meta name="robots" content="nofollow" />
-    <title>Travelite - Tours and Travels Online Booking HTML</title>
+    <title><?php echo lang("tpl_header_title");?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="description" content="Travelite - Tours and Travels Online Booking HTML"/>
-    <meta name="keywords" content="Travel, html template, Travelite template">
-    <meta name="author" content="Kamleshyadav"/>
+    <meta name="description" content="<?php echo lang("tpl_header_description");?>"/>
+    <meta name="keywords" content="Travel, Georgia">
     <meta name="MobileOptimized" content="320">
     <!--srart theme style -->
     <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet" type="text/css"/>
@@ -67,7 +66,6 @@ Version: 1.0.0
 </div>
 <!--Page main section end-->
 <!--main js file start-->
-
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap-select.js"></script>

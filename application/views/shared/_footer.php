@@ -34,11 +34,11 @@
                         if (!empty($tags)) {
                             foreach ($tags as $key => $val) {
 
-                                echo "<a>".$val['Name']."</a>";
+                                echo "<a>" . $val['Name'] . "</a>";
                             }
                         }
                         ?>
-                     </div>
+                    </div>
                 </aside>
             </div>
             <!--            <div class="col-md-4">-->
@@ -663,10 +663,13 @@
 <div class="copyright">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6"><span>Stay Connected with Us - </span> <a href=""><i
-                        class="fa fa-facebook"></i></a> <a href=""><i class="fa fa-twitter"></i></a> <a href=""><i
-                        class="fa fa-google-plus"></i></a> <a href=""><i class="fa fa-linkedin"></i></a> <a href=""><i
-                        class="fa fa-rss"></i></a></div>
+            <div class="col-md-6 col-sm-6"><span>Stay Connected with Us - </span>
+                <a target="_blank" href="https://www.facebook.com/Takeofftogeorgia-1731636153771032/"><i class="fa fa-facebook"></i></a>
+<!--                <a href=""><i class="fa fa-twitter"></i></a>-->
+<!--                <a href=""><i class="fa fa-google-plus"></i></a>-->
+<!--                <a href=""><i class="fa fa-linkedin"></i></a>-->
+<!--                <a href=""><i class="fa fa-rss"></i></a>-->
+            </div>
             <div class="col-md-6 col-sm-6 text-right"><span>Take off to Georgia@2016. All Right Reserved</span></div>
         </div>
     </div>

@@ -50,12 +50,12 @@
                         <div class="col-lg-6 col-md-7 col-sm-8 col-lg-offset-2">
                             <div class="address_contact_details">
                                 <div class="address_detais_city">
-                                    Houston:
+                                    Tbilisi:
                                 </div>
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> 1234, Street Name, City Name.</li>
-                                    <li><i class="fa fa-envelope"></i> Info@travellers.com</li>
-                                    <li><i class="fa fa-phone"></i> +1 235 654 4569</li>
+                                    <li><i class="fa fa-map-marker"></i> Georgia</li>
+                                    <li><i class="fa fa-envelope"></i> Info@takeofftogeorgia.com</li>
+                                    <li><i class="fa fa-phone"></i> +995 593 651 832</li>
                                 </ul>
                             </div>
 
@@ -85,9 +85,9 @@
                         <div class="col-lg-4 col-md-5 col-sm-4 t_align_c">
                             <!-- facebook squre start -->
                             <div class="social_box facebook_b_wrap">
-                                <a href="#"><i class="fa fa-facebook-square"></i></a>
-                                <div class="social_likes">30000</div>
-                                <div class="shares_and_likes">shares & Likes</div>
+                                <a href="https://www.facebook.com/Takeofftogeorgia-1731636153771032/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+<!--                                <div class="social_likes">30000</div>-->
+<!--                                <div class="shares_and_likes">shares & Likes</div>-->
                             </div>
                             <!-- facebook squre End -->
 

@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['tpl_header_title'] = 'Takeofftogeorgia with us!Best tours in Georgia with professional guides';
+$lang['tpl_header_description'] = 'Explore Georgia with us! The Highest mountains, amasing beaches, historical sites, wine tours and more! We\'ll make your vacation unforgettable';
 $lang['tpl_home'] = 'Home';
 $lang['tpl_tours'] = 'Tours';
 $lang['tpl_video_title'] = 'Watch Our Tourist Experience';

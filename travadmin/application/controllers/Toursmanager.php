@@ -17,6 +17,9 @@ class Toursmanager extends CI_Controller
 
     public function index()
     {
+
+
+        $this->td['tours'] = $this->tours_model->GetToursList();
         $this->load->view('main_tpl', $this->td);
     }
 
