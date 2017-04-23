@@ -122,9 +122,9 @@ class Toursmanager extends CI_Controller
         } else {
             $incomeForm = $this->input->post(null, false);
 
-
-            //print_r($incomeForm);
-            //die('');
+//echo "<pre>";
+//            print_r($incomeForm);
+//            die('');
 
 
             //Set Product

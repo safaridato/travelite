@@ -16,10 +16,12 @@ class Tourssvc extends CI_Controller
     {
         //$filterData = $this->input->post(null, true);
 
+        $id = $this->input->post("CategoryId",True);
+
         // if (!empty($filterData)) {
         $this->load->model('tours_model');
 
-        $tours = $this->tours_model->GetToursList();
+        $tours = $this->tours_model->GetToursList($id);
 
         //$this->mailsend_model->SendContactData($contactData['email'], $contactData['fullName'], $contactData['message']);
         //}

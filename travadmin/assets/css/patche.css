@@ -47,16 +47,21 @@ input.error{
     float: left;
     display: block;
 }
-.categoriesTree li:hover{
-    background: lightgray;
-}
+/*.categoriesTree li:hover{*/
+    /*background: lightgray;*/
+/*}*/
 
 .categoriesTree li button{
     float: right;
 }
 
 .categoriesTree .main-category-li{
-    border-top: 1px solid #000080;
+    border: 1px solid #000080;
+    padding: 10px 150px 10px 20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    box-sizing: border-box;
 }
 .categoriesTree .main-category-in{
     background: #bbf7b2;
@@ -68,4 +73,33 @@ input.error{
 
 .cat-img{
 width: 150px;
+}
+
+
+.main-new-category-wrapper{
+    border: 1px solid;
+    border-radius:5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.main-new-category-wrapper .title{
+    font-size: 16px;
+    width: 100%;
+    padding: 8px 0;
+}
+.delimiter{
+    padding: 10px 0;
+}
+.delimiter .title{
+    font-size: 16px;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.main-item{
+    background: #d9dcde;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
 }

@@ -161,4 +161,20 @@ class Tours_model extends CI_Model
 
     }
 
+
+    public function GetToursList()
+    {
+
+        $toursList = array();
+        $query = "CALL GetToursAdmin(1);";
+
+        $result = $this->db->query($query);
+        $tourResult = $result->result_array();
+        $toursList = $tourResult;
+        $result->next_result();
+
+        return $toursList;
+
+    }
+
 }

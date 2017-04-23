@@ -38,6 +38,8 @@ Class Profile extends CI_Controller{
         }else{
             $user = $_POST['username'];
             $pass = hash('sha256',$_POST['password']);
+
+            //die($pass);
             $this->load->model("auth_model");
             $status = $this->auth_model->checkauth($user, $pass);
 

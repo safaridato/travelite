@@ -15,4 +15,13 @@ class Tourssvc_model extends CI_Model
 
     }
 
+
+    public function ChangeTourStatusById($tourId = 0, $status = 0)
+    {
+        $query = "call DisableTour('" . $tourId . "','" . $status . "');";
+        $this->db->query($query);
+        return true;
+
+    }
+
 }

@@ -9,12 +9,15 @@ if (is_array($category) && !empty($category)) {
     </div>
     <?php
 }
+//print_r($category);
+
 ?>
+
 
 <!--page title end-->
 <div class="clearfix"></div>
 <div class="full_width destinaion_sorting_section" ng-controller="ToursListController">
-    <div class="container">
+    <div class="container" ng-init="formFields.CategoryId = '<?php  (is_array($category) && !empty($category) && $category["Id"]) ? print $category["Id"] : print 0; ?>'; GetToursList()">
         <div class="row space_100">
             <!-- left sidebar start -->
             <div class="col-lg-3 col-md-3 col-sm-12">

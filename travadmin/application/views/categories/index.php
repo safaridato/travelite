@@ -3,7 +3,10 @@
         <ul class="categoriesTree">
             <!--            Add New Category-->
             <li>
-                <div>
+                <div class="main-new-category-wrapper" >
+
+                    <div class="title">Add New Category</div>
+
                     <input type="text" name="category[]" placeholder="Category Name EN"
                            class="addNewCategoryName input-large" id="addNewCategoryName1">
                     <input type="text" name="category[]" placeholder="Category Name DE"
@@ -30,10 +33,14 @@
                         <span id="status"></span>
                     </div>
                 </div>
-                <hr/>
             </li>
             <!--            Add New Category-->
 
+            <li class="delimiter">
+                <div class="title">
+                    Categories List
+                </div>
+            </li>
             <?php
             foreach ($categoriesList as $key => $val) {
 //                echo "<pre>";
@@ -41,9 +48,9 @@
                 ?>
 
                 <!--Main Category List-->
-                <li class="category_row_<?php echo $val['categories']['Id']; ?>">
-                    <div>
-                        main category
+                <li class="category_row_<?php echo $val['categories']['Id']; ?> main-item" >
+                    <div class="title">
+                        Main category
                     </div>
                     <!--                    Category  Names -->
                     <div class="cat-merge">
@@ -79,7 +86,7 @@
                     <!--                    Category  Image -->
                     <div class="cat-merge">
                         <img class="cat-img"
-                             src="http://localhost/travelite<?php echo $val['categories']['ImageLink']; ?>">
+                             src="//takeofftogeorgia.com<?php echo $val['categories']['ImageLink']; ?>">
 
                         <input type="file" name="file1[]" id="filemc<?php echo $tVal['CategoryId']; ?>"
                                class="addCategoryPic">

@@ -63,14 +63,13 @@
             <?php
             foreach ($tourDetails['descriptions'] as $key => $val) {
                 ?>
-
                 <div class="control-group">
                     <label class="control-label">Tour Description <?php echo $val['LangIso']; ?></label>
 
 
                     <input type="hidden" id="editor<?php echo $val['LangId']; ?>_hidden"
-                           value='<?php echo $val['FullReview']; ?>'" name="names[<?php echo $val['LangId']; ?>
-                    ][fulldescription]">
+                           value="<?php echo $val['FullReview']; ?>"
+                           name="names[<?php echo $val['LangId']; ?>][fulldescription]">
                     <div class="controls">
                         <div class="wysiwyg-editor" id="editor<?php echo $val['LangId']; ?>"></div>
                         <div class="hr hr-double dotted"></div>

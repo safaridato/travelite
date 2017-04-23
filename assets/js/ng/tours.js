@@ -5,14 +5,14 @@
 
 
             $scope.toursList = {};
-
+            $scope.formFields.CategoryId = 0;
 
             //
             //
-            $scope.GetToursList = function () {
+            $scope.GetToursList = function (CategoryId) {
                 var fd = new FormData();
                 $scope.formFields.loadForm = true;
-                fd.append("FirstName", $scope.formFields.FirstName);
+                fd.append("CategoryId", $scope.formFields.CategoryId);
                 $http({
                     method: "POST",
                     url: "services/tourssvc/GetTours/",
@@ -25,9 +25,8 @@
                 }, function errorCallback(response) {
 
                 });
-            }
+            };
 
-            $scope.GetToursList();
 
 
         })

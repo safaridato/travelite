@@ -65,12 +65,12 @@ class Tours_model extends CI_Model
     }
 
     public
-    function GetToursList()
+    function GetToursList($categoryId = 0)
     {
 
         $toursList = array();
 
-        $query = "CALL GetTours(" . lang_id() . ");";
+        $query = "CALL GetTours(" . lang_id() . ", ".$categoryId.");";
 
         $result = $this->db->query($query);
         $toursResult = $result->result_array();

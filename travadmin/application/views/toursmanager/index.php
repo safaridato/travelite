@@ -43,7 +43,26 @@
                     <i class="icon-time bigger-110 hidden-phone"></i>
                     <?php echo $val['Status']; ?>
                 </th>
-                <th><a href="/travadmin/toursmanager/edit/<?php echo $val['Id']; ?>">Edit</a> </th>
+                <th>
+                    <a href="/travadmin/toursmanager/edit/<?php echo $val['Id']; ?>">Edit</a>
+                    <a href="#" data-tour="<?php echo $val['Id']; ?>" class="delete-tour">Delete</a>
+
+                    <?php
+
+                    if ($val['Status'] == 2) {
+                        ?>
+                        <a href="#" data-tour="<?php echo $val['Id']; ?>" class="enable-tour">Enable</a>
+                        <?php
+                    } else {
+                        ?>
+                        <a href="#" data-tour="<?php echo $val['Id']; ?>" class="stop-tour">Stop</a>
+
+                        <?php
+                    }
+
+
+                    ?>
+                </th>
             </tr>
             <?php
         }
@@ -52,3 +71,61 @@
         </tbody>
     </table>
 </div>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $(".delete-tour").click(function () {
+
+            var tourId = $(this).attr("data-tour");
+
+            if (confirm("Delete this tour: " + tourId + "?")) {
+
+                ChangeStatusTour(tourId, 0)
+
+            }
+
+        });
+        $(".stop-tour").click(function () {
+
+            var tourId = $(this).attr("data-tour");
+
+            if (confirm("Stop this tour: " + tourId + "?")) {
+
+                ChangeStatusTour(tourId, 2)
+
+            }
+
+        });
+        $(".enable-tour").click(function () {
+
+            var tourId = $(this).attr("data-tour");
+
+            if (confirm("Enable this tour: " + tourId + "?")) {
+
+                ChangeStatusTour(tourId, 1)
+
+            }
+
+        });
+
+
+        function ChangeStatusTour(tourId, status) {
+
+            $.ajax({
+                url: "<?php echo base_url();?>services/tourssvc/ChangeTourStatus",
+                data: {tourId: tourId, status: status},
+                dataType: "json",
+                type: "post"
+            }).success(function (res) {
+
+                document.location.reload();
+            });
+
+        }
+
+    });
+
+</script>
